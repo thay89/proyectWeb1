@@ -1,0 +1,137 @@
+/* Definir colores personalizados */
+:root {
+    --disco: #901956;
+    --blue-chill: #0faca5;
+    --satin-linen: #e5e5d1; /* Color crema */
+    --alizarin-crimson: #e42b2d;
+    --cape-palliser: #af7841;
+    --cioccolato: #61350f;
+    --carissma: #e87bb7;
+    --maroon-flush: #bf2646;
+    --strikemaster: #9c698b;
+    --buccaneer: #5d2b3f;
+    --dark-gray: #333333; /* Gris oscuro */
+}
+/* Definir colores personalizados */
+:root {
+    --disco: #901956;
+    --blue-chill: #0faca5; /* Turquesa */
+    --satin-linen: #e5e5d1; /* Color crema */
+    --alizarin-crimson: #e42b2d;
+    --cape-palliser: #af7841;
+    --cioccolato: #61350f;
+    --carissma: #e87bb7;
+    --maroon-flush: #bf2646;
+    --strikemaster: #9c698b;
+    --buccaneer: #5d2b3f;
+    --dark-gray: #333333; /* Gris oscuro */
+    --black: #000000; /* Negro */
+    --white: #ffffff; /* Blanco */
+}
+
+.fa-check.text-secondary {
+    color: var(--blue-chill) !important; /* Checks en turquesa */
+}
+
+/* Botones primarios y secundarios */
+.btn-primary {
+    background-color: var(--disco) !important; 
+}
+
+.btn-primary:hover {
+    background-color: var(--maroon-flush) !important; 
+}
+
+.btn-secondary {
+    background-color: var(--blue-chill) !important; 
+}
+
+.btn-secondary:hover {
+    background-color: var(--cape-palliser) !important; 
+}
+
+/* Título "Cupcake House" con dos colores */
+.navbar-brand .text-primary {
+    color: var(--disco) !important; 
+}
+
+.navbar-brand .text-secondary {
+    color: var(--blue-chill) !important; 
+}
+
+
+.text-blue-chill {
+    color: #0faca5 !important; /* Turquesa (--blue-chill) */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold !important;
+}
+
+p {
+    color: var(--dark-gray) !important; 
+}
+
+.text-muted {
+   font-size: 18px;
+}
+
+
+.section-title {
+    font-weight: bold !important; 
+    color: var(--buccaneer) !important;
+}
+
+.team-item h3{
+    font-weight: bold !important; 
+    color: var(--buccaneer) !important;
+}
+
+.team-item p {
+    color: var(--dark-gray) !important;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--buccaneer) !important; 
+}
+
+.footer .text-primary {
+    color: var(--satin-linen) !important;
+}
+
+.footer .text-secondary {
+    color: var(--blue-chill) !important;
+}
+
+.footer .col-12 h5, .footer .col-12 p {
+    color: var(--satin-linen) !important;
+}
+
+/* Navbar */
+.navbar-light .navbar-nav .nav-link {
+    color: var(--buccaneer) !important;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+    color: var(--blue-chill) !important;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: var(--maroon-flush) !important; 
+}
+
+/* Botones y contorno de la imagen */
+.team-item .btn-outline-secondary {
+    border-color: var(--blue-chill) !important;
+    color: var(--blue-chill) !important;
+}
+
+.team-item .btn-outline-secondary:hover {
+    background-color: var(--blue-chill) !important; 
+    color: var(--satin-linen) !important; 
+}
+
+.team-img {
+    border: 5px solid var(--blue-chill) !important; 
+}
