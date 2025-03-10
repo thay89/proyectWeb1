@@ -135,3 +135,10 @@ p {
 .team-img {
     border: 5px solid var(--blue-chill) !important; 
 }
+
+.page-header {
+    background-image: url('img/IMG_6923.jpg');
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 90px;
+}
