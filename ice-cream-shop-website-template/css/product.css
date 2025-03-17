@@ -1,4 +1,3 @@
-
 /* Definir colores personalizados */
 :root {
     --disco: #901956;
@@ -6,13 +5,9 @@
     --satin-linen: #e5e5d1; /* Color crema */
     --alizarin-crimson: #e42b2d;
     --cape-palliser: #af7841;
-    --cioccolato: #61350f;
-    --carissma: #e87bb7;
     --maroon-flush: #bf2646;
-    --strikemaster: #9c698b;
     --buccaneer: #5d2b3f;
     --dark-gray: #333333; /* Gris oscuro */
-    --black: #000000; /* Negro */
     --white: #ffffff; /* Blanco */
 }
 
@@ -94,19 +89,29 @@
     color: var(--blue-chill) !important;
 }
 
-.team-item .btn-outline-secondary:hover {
-    background-color: var(--blue-chill) !important; 
-    color: var(--satin-linen) !important; 
-}
-
-.team-img {
-    border: 5px solid var(--blue-chill) !important; 
-}
-
-
 .page-header {
-    background-image: url(../img/IMG_1250.jpg);
+    background-image: url(../img/IMG_8804.JPG);
     background-size: cover;
     background-position: center;
     margin-bottom: 90px;
 }
+
+.texto1 {
+    display: flex;
+    justify-content: center;  
+    align-items: center;     
+    text-align: center;
+    width: 100%;             
+    height: 100vh;           
+    margin-top: -250px;
+    margin-bottom: -250px;
+}
+
+
+/* Cambiar color de fondo del contenedor del producto*/
+.product-item:hover {
+    background-color: var(--blue-chill) !important; 
+    color: var(--white) !important; 
+    transition: background-color 0.3s ease; 
+}
+
