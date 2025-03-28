@@ -130,3 +130,20 @@
     
 })(jQuery);
 
+
+
+
+    $(document).ready(function() {
+        // Cuando se abre el modal
+        $('#videoModal').on('shown.bs.modal', function () {
+            // Obtener el elemento de video y reproducirlo
+            $(this).find('video')[0].play();
+        });
+        
+        // Cuando se cierra el modal
+        $('#videoModal').on('hidden.bs.modal', function () {
+            // Pausar el video
+            $(this).find('video')[0].pause();
+        });
+    });
+
