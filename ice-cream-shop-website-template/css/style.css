@@ -6,6 +6,21 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 :root {
+  --disco: #901956;
+  --blue-chill: #0faca5;
+  /* Turquesa */
+  --satin-linen: #e5e5d1;
+  /* Color crema */
+  --alizarin-crimson: #e42b2d;
+  --cape-palliser: #af7841;
+  --cioccolato: #61350f;
+  --carissma: #e87bb7;
+  --maroon-flush: #bf2646;
+  --strikemaster: #9c698b;
+  --buccaneer: #5d2b3f;
+  --dark-gray: #333333;
+  --black: #000000;
+  --white: #ffffff;
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -16,7 +31,6 @@
   --green: #28a745;
   --teal: #20c997;
   --cyan: #17a2b8;
-  --white: #fff;
   --gray: #6c757d;
   --gray-dark: #343a40;
   --primary: #F195B2;
@@ -42,11 +56,72 @@
   box-sizing: border-box;
 }
 
+/*--------------------------------Navbar-----------------------------------------------*/
+.navbar-brand .text-primary {
+  color: var(--disco) !important;
+}
+
+.navbar-brand .text-secondary {
+  color: var(--blue-chill) !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: var(--buccaneer) !important;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+  color: var(--blue-chill) !important;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: var(--maroon-flush) !important;
+}
+
+/* Footer styling */
+.footer {
+  background-color: var(--buccaneer) !important; 
+}
+
+.footer .text-primary {
+  color: var(--satin-linen) !important;
+}
+
+.footer .text-secondary {
+  color: var(--blue-chill) !important;
+}
+
+.footer .col-12 h5, .footer .col-12 p {
+  color: var(--satin-linen) !important;
+
+  
+}
+
+/* Common button styles that might be used in both navbar and footer */
+.btn-primary {
+  background-color: var(--disco) !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--maroon-flush) !important;
+}
+
+.btn-secondary {
+  background-color: var(--blue-chill) !important;
+}
+
+.btn-secondary:hover {
+  background-color: var(--cape-palliser) !important;
+}
+
+/*-------------------------------Fin del Navbar----------------------------------------*/
+
 
 /*---------------------------------Carrucel--------------------------------------------*/
 #header-carousel .carousel-item {
-  height: 90vh; /* Use viewport height instead of fixed pixels */
-  max-height: 900px; /* Maximum height on larger screens */
+  height: 90vh;
+  /* Use viewport height instead of fixed pixels */
+  max-height: 900px;
+  /* Maximum height on larger screens */
 }
 
 #header-carousel .carousel-item img {
@@ -58,36 +133,40 @@
 /* Text responsiveness */
 @media (max-width: 768px) {
   #header-carousel .carousel-item {
-      height: 70vh; /* Smaller height on medium devices */
+    height: 70vh;
+    /* Smaller height on medium devices */
   }
-  
+
   #header-carousel .carousel-caption h1 {
-      font-size: 2.5rem; /* Smaller heading on medium devices */
+    font-size: 2.5rem;
+    /* Smaller heading on medium devices */
   }
-  
+
   #header-carousel .carousel-caption h4 {
-      font-size: 1rem;
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 576px) {
   #header-carousel .carousel-item {
-      height: 60vh; /* Even smaller height on small devices */
+    height: 60vh;
+    /* Even smaller height on small devices */
   }
-  
+
   #header-carousel .carousel-caption h1 {
-      font-size: 1.8rem; /* Smaller heading on small devices */
+    font-size: 1.8rem;
+    /* Smaller heading on small devices */
   }
-  
+
   #header-carousel .carousel-caption h4 {
-      font-size: 0.9rem;
+    font-size: 0.9rem;
   }
-  
+
   /* Adjust control buttons for mobile */
   #header-carousel .carousel-control-prev div,
   #header-carousel .carousel-control-next div {
-      width: 35px;
-      height: 35px;
+    width: 35px;
+    height: 35px;
   }
 }
 
@@ -140,8 +219,10 @@ a.product-item:focus {
   text-decoration: none !important;
   border-color: transparent !important;
   outline: none !important;
-  transform: translateY(-10px);/* Efecto de salto hacia arriba */
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);/* Sombra más pronunciada al hover */
+  transform: translateY(-10px);
+  /* Efecto de salto hacia arriba */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  /* Sombra más pronunciada al hover */
 }
 
 
@@ -165,6 +246,10 @@ a.product-item:focus {
 
 
 /*--------------------------------Fin seccion productos---------------------------------*/
+
+
+
+
 html {
   font-family: sans-serif;
   line-height: 1.15;
