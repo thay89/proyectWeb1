@@ -1,0 +1,20 @@
+/* Updated CSS */
+.portfolio-item {
+    padding: 10px; /* Padding inside each item for spacing */
+}
+
+.portfolio-item img {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    width: 100%; /* Make sure image fills its container */
+}
+
+.portfolio-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Add this to create proper spacing */
+.portfolio-container {
+    margin: 0 -10px; /* Negative margin to counter the padding */
+}
