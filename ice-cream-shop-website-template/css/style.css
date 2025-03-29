@@ -92,10 +92,7 @@
 
 .footer .col-12 h5, .footer .col-12 p {
   color: var(--satin-linen) !important;
-
-  
 }
-
 /* Common button styles that might be used in both navbar and footer */
 .btn-primary {
   background-color: var(--disco) !important;
