@@ -3,10 +3,12 @@
 
 <head>
     <meta charset="utf-8">
-    <title>iCREAM - Ice Cream Shop Website Template</title>
+    <title>Cupcake House - Galería de Productos</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
+    <meta content="Panadería, Repostería, Pastelería" name="keywords">
+    <meta content="Deliciosos productos de pastelería y repostería" name="description">
+
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -39,7 +41,7 @@
                         <span class="text-white">|</span>
                         <a class="text-white px-3" href="">Help</a>
                         <span class="text-white">|</span>
-                        <a class="text-white pl-3" href="">Supportt</a>
+                        <a class="text-white pl-3" href="">Support</a>
                     </div>
                 </div>
                 <div class="col-md-6 text-center text-lg-right">
@@ -73,15 +75,14 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <a href="index.html" class="nav-item nav-link">Home</a>
                         <a href="about.html" class="nav-item nav-link">Nosotros</a>
                     </div>
                     <a href="index.html" class="navbar-brand mx-5 d-none d-lg-block">
-
                         <h1 class="m-0 display-6 text-primary"><span class="text-secondary">Cupcake</span>House</h1>
                     </a>
                     <div class="navbar-nav mr-auto py-0">
-                        <a href="gallery.html" class="nav-item nav-link">Galeria</a>
+                        <a href="gallery.html" class="nav-item nav-link active">Galeria</a>
                         <a href="product.html" class="nav-item nav-link">Productos</a>
                     </div>
                 </div>
@@ -93,18 +94,18 @@
     <!-- Header Start -->
     <div class="jumbotron jumbotron-fluid page-header" style="margin-bottom: 5px;">
         <div class="container text-center py-5">
-            <h1 class="text-white display-3 mt-lg-5">Galeria</h1>
+            <h1 class="text-white display-3 mt-lg-5">Galería</h1>
             <div class="d-inline-flex align-items-center text-white">
-                <p class="m-0"><a class="text-white" href="">Home</a></p>
+                <p class="m-0"><a class="text-white" href="index.html">Home</a></p>
                 <i class="fa fa-circle px-3"></i>
-                <p class="m-0">Gallery</p>
+                <p class="m-0">Galería</p>
             </div>
         </div>
     </div>
     <!-- Header End -->
 
     <!-- Portfolio Start -->
-    <div class="container-fluid py-5 px-0">
+    <div class="container-fluid py-5 px-0" style="margin-bottom: 120px;">
         <div class="container py-5">
             <div class="row justify-content-center">
                 <div class="col-lg-5">
@@ -114,50 +115,51 @@
             <div class="row">
                 <div class="col-12 text-center">
                     <ul class="list-inline mb-4 pb-2" id="portfolio-flters">
-                        <li class="btn btn-sm btn-outline-primary m-1 active"  data-filter="*">Todos</li>
-                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".first">Pasteles</li>
-                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".second">Reposteria</li>
-                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".third">Mesas Dulces</li>
+                        <li class="btn btn-sm btn-outline-primary m-1 active" data-filter="*">Todos</li>
+                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".pasteleria">Pastelería</li>
+                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".reposteria">Repostería</li>
+                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".mesas-dulces">Mesas Dulces</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="row portfolio-container">
-                <div class="col-lg-4 col-md-6 portfolio-item first">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid" src="img/portfolio-1.jpg" alt="">
-                        <a class="portfolio-btn" href="img/portfolio-1.jpg" data-lightbox="portfolio">
-                            <i class="fa fa-plus text-primary" style="font-size: 60px;"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 portfolio-item first">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid" src="img/portfolio-1.jpg" alt="">
-                        <a class="portfolio-btn" href="img/portfolio-1.jpg" data-lightbox="portfolio">
-                            <i class="fa fa-plus text-primary" style="font-size: 60px;"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 portfolio-item first">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid" src="img/portfolio-1.jpg" alt="">
-                        <a class="portfolio-btn" href="img/portfolio-1.jpg" data-lightbox="portfolio">
-                            <i class="fa fa-plus text-primary" style="font-size: 60px;"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- More items... -->
+            <div class="row portfolio-container" id="product-gallery" style="margin-bottom: 120px;">
+                <!-- Products will be loaded here from JSON -->
             </div>
-
         </div>
     </div>
     <!-- Portfolio End -->
 
+    <!-- Custom Modal -->
+    <div id="customModal" class="custom-modal">
+        <span class="close-x" onclick="closeModal()">&times;</span>
+        <div class="custom-modal-content fade-in">
+            <div class="modal-image-container">
+                <img id="modalImage" class="modal-image" src="" alt="Product Image">
+            </div>
+            <div class="modal-details">
+                <h2 id="modalTitle" class="modal-title">Product Title</h2>
+                <div id="modalDescription" class="modal-description">
+                    Product description goes here. This will contain details about the product.
+                </div>
+                <div id="modalSabores" class="modal-sabores">
+                    <h4>Sabores disponibles:</h4>
+                    <ul id="saboresList">
+                        <!-- Sabores will be loaded here -->
+                    </ul>
+                </div>
+                <div id="modalPrecio" class="modal-precio">
+                    <h4>Precio: $<span id="precioValue">0.00</span></h4>
+                </div>
+                <div class="modal-buttons">
+                    <button class="btn-order" onclick="orderItem()">Ordenar</button>
+                    <button class="btn-close" onclick="closeModal()">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Footer Start -->
     <div class="container-fluid footer py-5" style="margin-top: 120px;">
         <div class="container text-center py-5">
             <div class="row">
@@ -175,13 +177,13 @@
                 <div class="col-12 mt-2 mb-4">
                     <div class="row">
                         <div class="col-sm-6 text-center text-sm-right border-right mb-3 mb-sm-0">
-                            <h5 class="font-weight-bold mb-2">Contactanos </h5>
+                            <h5 class="font-weight-bold mb-2">Contáctanos </h5>
                             <p class="mb-2">Limón, Pococí, Cariari</p>
                             <p class="mb-0">+506 6280 5907</p>
                         </div>
                         <div class="col-sm-6 text-center text-sm-left">
                             <h5 class="font-weight-bold mb-2">Horario</h5>
-                            <p class="mb-2">Lunes – Sabado, 8AM – 5PM</p>
+                            <p class="mb-2">Lunes – Sábado, 8AM – 5PM</p>
                             <p class="mb-0">Domingos, 8AM - 12 MD</p>
                         </div>
                     </div>
@@ -216,6 +218,7 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script src="js/galeria.js"></script>
 </body>
 
 </html>

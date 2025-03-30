@@ -11414,7 +11414,6 @@ h6,
   right: 30px;
   bottom: 30px;
   left: 30px;
-  border: 2px solid #FFFFFF;
   z-index: 1;
 }
 
@@ -11427,7 +11426,6 @@ h6,
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #FFFFFF;
   text-decoration: none;
   opacity: 0;
   transition: .5s;
