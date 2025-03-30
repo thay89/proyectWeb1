@@ -1,0 +1,166 @@
+{
+    "productos": [
+      {
+        "categoria": "Pastelería",
+        "items": [
+          {
+            "id": "1",
+            "nombre": "Pastel de Chocolate",
+            "imagen": "img/portfolio-1.jpg",
+            "descripcion": "Delicioso pastel de chocolate con tres capas y cubierta de ganache.",
+            "sabores": ["Chocolate", "Trufa", "Avellana"],
+            "precio": 15.0
+          },
+          {
+            "id": "2",
+            "nombre": "Pastel de Chocolate",
+            "imagen": "img/portfolio-1.jpg",
+            "descripcion": "Delicioso pastel de chocolate con tres capas y cubierta de ganache.",
+            "sabores": ["Chocolate", "Trufa", "Avellana"],
+            "precio": 15.0
+          },
+          {
+            "id": "3",
+            "nombre": "Pastel de Chocolate",
+            "imagen": "img/portfolio-1.jpg",
+            "descripcion": "Delicioso pastel de chocolate con tres capas y cubierta de ganache.",
+            "sabores": ["Chocolate", "Trufa", "Avellana"],
+            "precio": 15.0
+          },
+          {
+            "id": "4",
+            "nombre": "Pastel de Chocolate",
+            "imagen": "img/portfolio-1.jpg",
+            "descripcion": "Delicioso pastel de chocolate con tres capas y cubierta de ganache.",
+            "sabores": ["Chocolate", "Trufa", "Avellana"],
+            "precio": 15.0
+          },
+          {
+            "id": "4",
+            "nombre": "Pastel de Chocolate",
+            "imagen": "img/portfolio-1.jpg",
+            "descripcion": "Delicioso pastel de chocolate con tres capas y cubierta de ganache.",
+            "sabores": ["Chocolate", "Trufa", "Avellana"],
+            "precio": 15.0
+          },
+          {
+            "id": "1",
+            "nombre": "Cupcakes de Vainilla",
+            "imagen": "img/portfolio-2.jpg",
+            "descripcion": "Cupcakes de vainilla con crema de mantequilla y decoraciones artesanales.",
+            "sabores": ["Vainilla", "Fresa", "Red Velvet"],
+            "precio": 3.0
+          }
+        ]
+      },
+      {
+        "categoria": "Repostería",
+        "items": [
+          {
+            "id": "1",
+            "nombre": "Galletas Decoradas",
+            "imagen": "img/portfolio-1.jpg",
+            "descripcion": "Galletas de mantequilla decoradas a mano con glaseado real.",
+            "sabores": ["Vainilla", "Chocolate"],
+            "precio": 2.5
+          },
+          {
+            "id": "1",
+            "nombre": "Galletas Decoradas",
+            "imagen": "img/portfolio-1.jpg",
+            "descripcion": "Galletas de mantequilla decoradas a mano con glaseado real.",
+            "sabores": ["Vainilla", "Chocolate"],
+            "precio": 2.5
+          },
+          {
+            "id": "1",
+            "nombre": "Galletas Decoradas",
+            "imagen": "img/portfolio-1.jpg",
+            "descripcion": "Galletas de mantequilla decoradas a mano con glaseado real.",
+            "sabores": ["Vainilla", "Chocolate"],
+            "precio": 2.5
+          },
+          {
+            "id": "1",
+            "nombre": "Galletas Decoradas",
+            "imagen": "img/portfolio-1.jpg",
+            "descripcion": "Galletas de mantequilla decoradas a mano con glaseado real.",
+            "sabores": ["Vainilla", "Chocolate"],
+            "precio": 2.5
+          },
+          {
+            "id": "1",
+            "nombre": "Galletas Decoradas",
+            "imagen": "img/portfolio-1.jpg",
+            "descripcion": "Galletas de mantequilla decoradas a mano con glaseado real.",
+            "sabores": ["Vainilla", "Chocolate"],
+            "precio": 2.5
+          },
+          {
+            "id": "1",
+            "nombre": "Galletas Decoradas",
+            "imagen": "img/portfolio-1.jpg",
+            "descripcion": "Galletas de mantequilla decoradas a mano con glaseado real.",
+            "sabores": ["Vainilla", "Chocolate"],
+            "precio": 2.5
+          }
+          
+        ]
+      },
+      {
+        "categoria": "Mesas Dulces",
+        "items": [
+          {
+            "id": "1",
+            "nombre": "Mesa Dulce de Bodas",
+            "imagen": "img/portfolio-1.jpg",
+            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
+            "sabores": ["Chocolate", "Frutas", "Crema"],
+            "precio": 100.0
+          },
+          {
+            "id": "1",
+            "nombre": "Mesa Dulce de Bodas",
+            "imagen": "img/portfolio-1.jpg",
+            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
+            "sabores": ["Chocolate", "Frutas", "Crema"],
+            "precio": 100.0
+          },
+          {
+            "id": "1",
+            "nombre": "Mesa Dulce de Bodas",
+            "imagen": "img/portfolio-1.jpg",
+            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
+            "sabores": ["Chocolate", "Frutas", "Crema"],
+            "precio": 100.0
+          },
+          {
+            "id": "1",
+            "nombre": "Mesa Dulce de Bodas",
+            "imagen": "img/portfolio-1.jpg",
+            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
+            "sabores": ["Chocolate", "Frutas", "Crema"],
+            "precio": 100.0
+          },
+          {
+            "id": "1",
+            "nombre": "Mesa Dulce de Bodas",
+            "imagen": "img/portfolio-1.jpg",
+            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
+            "sabores": ["Chocolate", "Frutas", "Crema"],
+            "precio": 100.0
+          },
+          {
+            "id": "1",
+            "nombre": "Mesa Dulce de Bodas",
+            "imagen": "img/portfolio-1.jpg",
+            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
+            "sabores": ["Chocolate", "Frutas", "Crema"],
+            "precio": 100.0
+          }
+        ]
+      }
+    ]
+  }
+  
+  
