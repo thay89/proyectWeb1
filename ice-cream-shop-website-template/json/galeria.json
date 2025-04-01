@@ -36,7 +36,7 @@
           {
   
             "nombre": "Pastel de Chocolate",
-            "imagen": "img/galeria5.jpeg",
+            "imagen": "img/galeria6.jpeg",
             "descripcion": "Delicioso pastel de chocolate con tres capas y cubierta de ganache.",
             "sabores": ["Chocolate", "Trufa", "Avellana"],
             "precio": 15.0
