@@ -1,239 +1,94 @@
-function openModal(imageSrc, title, description) {
-    document.getElementById('modalImage').src = imageSrc;
-    document.getElementById('modalTitle').innerText = title;
-    document.getElementById('modalDescription').innerText = description;
-    document.getElementById('customModal').style.display = 'block';
-    document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
-}
+// Variables globales
+let productosData = null;
 
-// Function to close the modal
-function closeModal() {
-    document.getElementById('customModal').style.display = 'none';
-    document.body.style.overflow = 'auto'; // Enable scrolling when modal is closed
-}
-
-// Function to handle the order button
-function orderItem() {
-    // Add your order functionality here
-    // For example, you could redirect to a contact page or open a form
-    alert('¡Gracias por tu interés en ordenar este producto! Te contactaremos pronto.');
-    // Alternatively, you could redirect to a contact page:
-    // window.location.href = 'contact.html';
-}
-
-// Close the modal if the user clicks outside of it
-window.onclick = function(event) {
-    if (event.target == document.getElementById('customModal')) {
-        closeModal();
-    }
-}
-
-$(document).ready(function() {
-    // This will prevent the default lightbox behavior
-    $('a[data-lightbox]').off('click');
-});
-
-// Load products from JSON data
-document.addEventListener('DOMContentLoaded', function() {
-    loadProducts();
-});
-
-// Load products from JSON file
-function loadProducts() {
-    // Carga el JSON desde una carpeta específica del proyecto
-    fetch('json/galeria.json')  // Ajusta esta ruta según la estructura de tu proyecto
+// Cargar productos desde JSON
+function cargarProductos() {
+    fetch('json/galeria.json')
         .then(response => response.json())
         .then(data => {
-            displayProducts(data);
-            initializeIsotope();
+            productosData = data;
+            mostrarProductos('*');
+            configurarFiltros();
         })
-        .catch(error => {
-            console.error('Error loading JSON data:', error);
-            // Fallback a datos de ejemplo si la carga falla
-            useBackupData();
-        });
+        .catch(error => console.error('Error al cargar los datos:', error));
 }
 
-// Función de respaldo si la carga del JSON falla
-function useBackupData() {
-    const mockData = {
-        "productos": [
-            {
-                "categoria": "Pastelería",
-                "items": [
-                    {
-                        "id": "1",
-                        "nombre": "Pastel de Chocolate",
-                        "imagen": "img/portfolio-1.jpg",
-                        "descripcion": "Delicioso pastel de chocolate con tres capas y cubierta de ganache.",
-                        "sabores": ["Chocolate", "Trufa", "Avellana"],
-                        "precio": 15.0
-                    },
-                    {
-                        "id": "6",
-                        "nombre": "Cupcakes de Vainilla",
-                        "imagen": "img/portfolio-2.jpg",
-                        "descripcion": "Cupcakes de vainilla con crema de mantequilla y decoraciones artesanales.",
-                        "sabores": ["Vainilla", "Fresa", "Red Velvet"],
-                        "precio": 3.0
-                    }
-                ]
-            },
-            {
-                "categoria": "Repostería",
-                "items": [
-                    {
-                        "id": "7",
-                        "nombre": "Galletas Decoradas",
-                        "imagen": "img/portfolio-1.jpg",
-                        "descripcion": "Galletas de mantequilla decoradas a mano con glaseado real.",
-                        "sabores": ["Vainilla", "Chocolate"],
-                        "precio": 2.5
-                    }
-                ]
-            },
-            {
-                "categoria": "Mesas Dulces",
-                "items": [
-                    {
-                        "id": "13",
-                        "nombre": "Mesa Dulce de Bodas",
-                        "imagen": "img/portfolio-1.jpg",
-                        "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
-                        "sabores": ["Chocolate", "Frutas", "Crema"],
-                        "precio": 100.0
-                    }
-                ]
-            }
-        ]
-    };
-    displayProducts(mockData);
-    initializeIsotope();
-}
-
-// Display products in the gallery
-function displayProducts(data) {
-    const galleryContainer = document.getElementById('product-gallery');
-    galleryContainer.innerHTML = '';
+// Mostrar productos en la galería
+function mostrarProductos(filtro = '*') {
+    const galeria = document.getElementById('product-gallery');
+    galeria.innerHTML = '';
     
-    data.productos.forEach(categoria => {
-        const categoryClass = categoria.categoria.toLowerCase().replace(/\s+/g, '-');
-        
-        categoria.items.forEach(item => {
-            // Create gallery item
-            const productDiv = document.createElement('div');
-            productDiv.className = `col-lg-4 col-md-6 portfolio-item ${categoryClass}`;
-            
-            // Create inner HTML structure
-            productDiv.innerHTML = `
-                <div class="position-relative overflow-hidden">
-                    <img class="img-fluid" src="${item.imagen}" alt="${item.nombre}">
-                    <a class="portfolio-btn" href="javascript:void(0)" onclick="openModalWithJSON('${item.id}')">
-                        <i class="fa fa-eye text-primary" style="font-size: 60px;"></i>
-                    </a>
-                </div>
-            `;
-            
-            galleryContainer.appendChild(productDiv);
-        });
-    });
+    if (!productosData) return;
     
-    // Store the data in a global variable for later use
-    window.productData = data;
-}
-
-// Initialize Isotope for filtering
-function initializeIsotope() {
-    // Wait a moment for images to load
-    setTimeout(function() {
-        $('.portfolio-container').isotope({
-            itemSelector: '.portfolio-item',
-            layoutMode: 'fitRows'
-        });
-
-        $('#portfolio-flters li').on('click', function() {
-            $("#portfolio-flters li").removeClass('active');
-            $(this).addClass('active');
-
-            $('.portfolio-container').isotope({
-                filter: $(this).data('filter')
+    productosData.productos.forEach(categoria => {
+        if (filtro === '*' || filtro === categoria.categoria) {
+            categoria.items.forEach(producto => {
+                const itemElement = document.createElement('div');
+                itemElement.className = `col-lg-4 col-md-6 mb-4 portfolio-item ${categoria.categoria}`;
+                
+                itemElement.innerHTML = `
+                    <div class="position-relative overflow-hidden mb-2">
+                        <img class="img-fluid w-100" src="${producto.imagen}" alt="${producto.nombre}">
+                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
+                            <a href="javascript:void(0);" onclick="abrirModal('${producto.nombre}', '${producto.imagen}', '${producto.descripcion}', ${JSON.stringify(producto.sabores).replace(/"/g, '&quot;')}, ${producto.precio})">
+                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                `;
+                
+                galeria.appendChild(itemElement);
             });
-        });
-    }, 300);
+        }
+    });
 }
 
-// Open modal with data from JSON
-function openModalWithJSON(productId) {
-    // Find the product in the data
-    let foundProduct = null;
+// Configurar eventos de filtrado
+function configurarFiltros() {
+    const filtros = document.querySelectorAll('#portfolio-flters li');
     
-    window.productData.productos.forEach(categoria => {
-        categoria.items.forEach(item => {
-            if (item.id === productId) {
-                foundProduct = item;
-            }
+    filtros.forEach(filtro => {
+        filtro.addEventListener('click', function() {
+            filtros.forEach(f => f.classList.remove('active'));
+            this.classList.add('active');
+            
+            const valor = this.getAttribute('data-filter').substring(1);
+            mostrarProductos(valor === '' ? '*' : valor);
         });
     });
-    
-    if (foundProduct) {
-        // Set modal content
-        document.getElementById('modalImage').src = foundProduct.imagen;
-        document.getElementById('modalTitle').innerText = foundProduct.nombre;
-        document.getElementById('modalDescription').innerText = foundProduct.descripcion;
-        
-        // Set sabores (flavors)
-        const saboresList = document.getElementById('saboresList');
-        saboresList.innerHTML = '';
-        foundProduct.sabores.forEach(sabor => {
-            const li = document.createElement('li');
-            li.textContent = sabor;
-            saboresList.appendChild(li);
-        });
-        
-        // Set price
-        document.getElementById('precioValue').innerText = foundProduct.precio.toFixed(2);
-        
-        // Show modal
-        document.getElementById('customModal').style.display = 'block';
-        document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
-    } else {
-        console.error('Product not found with ID:', productId);
-    }
 }
 
-// Function to close the modal
+// Abrir modal con información del producto
+function abrirModal(nombre, imagen, descripcion, sabores, precio) {
+    document.getElementById('modalTitle').textContent = nombre;
+    document.getElementById('modalImage').src = imagen;
+    document.getElementById('modalDescription').textContent = descripcion;
+    
+    const saboresList = document.getElementById('saboresList');
+    saboresList.innerHTML = '';
+    sabores.forEach(sabor => {
+        const li = document.createElement('li');
+        li.textContent = sabor;
+        saboresList.appendChild(li);
+    });
+    
+    document.getElementById('precioValue').textContent = precio.toFixed(2);
+    document.getElementById('customModal').style.display = 'flex';
+}
+
+// Cerrar modal
 function closeModal() {
     document.getElementById('customModal').style.display = 'none';
-    document.body.style.overflow = 'auto'; // Enable scrolling when modal is closed
 }
 
-// Function to handle the order button
-function orderItem() {
-    // Add your order functionality here
-    alert('¡Gracias por tu interés en ordenar este producto! Te contactaremos pronto.');
-    // Alternatively, you could redirect to a contact page:
-    // window.location.href = 'contact.html';
-}
 
-// Close the modal if the user clicks outside of it
-window.onclick = function(event) {
-    if (event.target == document.getElementById('customModal')) {
-        closeModal();
-    }
-}
+// Inicializar cuando se cargue la página
+document.addEventListener('DOMContentLoaded', cargarProductos);
 
-// Disable default lightbox behavior
-$(document).ready(function() {
-    // This will prevent the default lightbox behavior
-    $('a[data-lightbox]').off('click');
-});
-
-function initializeIsotope() {
-    // Espera a que las imágenes se carguen
-    imagesLoaded('.portfolio-container', function() {
-        $('.portfolio-container').isotope({
-            itemSelector: '.portfolio-item',
-            layoutMode: 'fitRows'
-        });
+// Deshabilitar comportamiento lightbox
+document.addEventListener('DOMContentLoaded', function() {
+    const lightboxLinks = document.querySelectorAll('a[data-lightbox]');
+    lightboxLinks.forEach(link => {
+        link.removeAttribute('data-lightbox');
     });
-}
+});

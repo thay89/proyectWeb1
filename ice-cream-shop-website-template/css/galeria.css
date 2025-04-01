@@ -327,7 +327,6 @@
     background-color: #c0c0c0;
 }
 
-/* Animation */
 .fade-in {
     animation: fadeIn 0.3s ease-in-out;
 }
@@ -337,15 +336,24 @@
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Add this to your css/galeria.css file */
-
-
-/* Agrega esto a tu archivo galeria.css */
 .portfolio-container {
-    margin-bottom: 120px; /* Asegura espacio antes del footer */
-    min-height: 50vh; /* Altura mínima para evitar solapamiento */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 300px;
+ 
 }
 
-.container-fluid.py-5.px-0 {
-    overflow: hidden; /* Previene que los elementos floten fuera del contenedor */
+.portfolio-container img {
+    height: 300px; /* Ajusta la altura según sea necesario */
+    width: 300px;
+    object-fit: contain; /* Asegura que la imagen no se recorte */
+    margin: 10px; /* Espaciado entre imágenes */
+}
+.portfolio-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: auto; /* Changed from 300px */
+    margin-bottom: 50px; /* Add space before footer */
 }
