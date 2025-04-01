@@ -11211,7 +11211,7 @@ h6,
 }
 
 .page-header {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/header.jpg), no-repeat center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/imagenGaleria.jpeg), no-repeat center center;
   background-size: cover;
 }
 
@@ -11414,7 +11414,6 @@ h6,
   right: 30px;
   bottom: 30px;
   left: 30px;
-  border: 2px solid #FFFFFF;
   z-index: 1;
 }
 
@@ -11427,7 +11426,6 @@ h6,
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #FFFFFF;
   text-decoration: none;
   opacity: 0;
   transition: .5s;
