@@ -13,7 +13,7 @@ function agregarCarrito(nombre, categoria){
         console.log("No se encontro el producto");
     }
    })
-   .catch(err => console.error("Error ak cargar el producto", err))
+   .catch(err => console.error("Error al cargar el producto", err))
 }
 
 
