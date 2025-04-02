@@ -11,7 +11,7 @@
             "precio": 15.0
           },
           {
-            "nombre": "Pastel de Chocolate",
+            "nombre": "Pastel de 2",
             "imagen": "img/galeria2.jpeg",
             "descripcion": "Delicioso pastel de chocolate con tres capas y cubierta de ganache.",
             "sabores": ["Chocolate", "Trufa", "Avellana"],
@@ -19,7 +19,7 @@
           },
           {
   
-            "nombre": "Pastel de Chocolate",
+            "nombre": "Pastel de 3",
             "imagen": "img/galeria3.jpeg",
             "descripcion": "Delicioso pastel de chocolate con tres capas y cubierta de ganache.",
             "sabores": ["Chocolate", "Trufa", "Avellana"],
@@ -27,7 +27,7 @@
           },
           {
          
-            "nombre": "Pastel de Chocolate",
+            "nombre": "Pastel de 7",
             "imagen": "img/galeria4.jpeg",
             "descripcion": "Delicioso pastel de chocolate con tres capas y cubierta de ganache.",
             "sabores": ["Chocolate", "Trufa", "Avellana"],
@@ -35,7 +35,7 @@
           },
           {
   
-            "nombre": "Pastel de Chocolate",
+            "nombre": "Pastel de 5",
             "imagen": "img/galeria6.jpeg",
             "descripcion": "Delicioso pastel de chocolate con tres capas y cubierta de ganache.",
             "sabores": ["Chocolate", "Trufa", "Avellana"],

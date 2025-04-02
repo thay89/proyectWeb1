@@ -48,12 +48,10 @@
                     <div class="d-inline-flex align-items-center">
                         <a class="text-white px-3" href="">
                             <i class="fas fa-shopping-cart"></i>
+                            <p id="contCarrito"></p>
                         </a>
                         <a class="text-white px-3" href="contact.html">
                             <i class="fas fa-envelope"></i>
-                        </a>
-                        <a class="text-white px-3" href="">
-                            <i class="fas fa-user"></i>
                         </a>
                     </div>
                 </div>
@@ -157,9 +155,7 @@
                 <div id="modalPrecio" class="modal-precio">
                     <h4>Precio: $<span id="precioValue">0.00</span></h4>
                 </div>
-                <div class="modal-buttons">
-                    <button class="btn-order" onclick="orderItem()">Ordenar</button>
-                    <button class="btn-close" onclick="closeModal()">Cerrar</button>
+                <div id="modalButtons" class="modal-buttons">
                 </div>
             </div>
         </div>
@@ -225,6 +221,7 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     <script src="js/galeria.js"></script>
+    <script src="js/carrito.js"></script>
 </body>
 
 </html>

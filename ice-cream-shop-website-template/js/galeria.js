@@ -30,7 +30,8 @@ function mostrarProductos(filtro = '*') {
                     <div class="position-relative overflow-hidden mb-2">
                         <img class="img-fluid w-100" src="${producto.imagen}" alt="${producto.nombre}">
                         <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="javascript:void(0);" onclick="abrirModal('${producto.nombre}', '${producto.imagen}', '${producto.descripcion}', ${JSON.stringify(producto.sabores).replace(/"/g, '&quot;')}, ${producto.precio})">
+                            <a href="javascript:void(0);" onclick="abrirModal('${producto.nombre}', '${producto.imagen}', '${producto.descripcion}', 
+                            ${JSON.stringify(producto.sabores).replace(/"/g, '&quot;')}, ${producto.precio}, '${categoria.categoria}')">
                                 <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
                             </a>
                         </div>
@@ -59,7 +60,7 @@ function configurarFiltros() {
 }
 
 // Abrir modal con información del producto
-function abrirModal(nombre, imagen, descripcion, sabores, precio) {
+function abrirModal(nombre, imagen, descripcion, sabores, precio, categoria) {
     document.getElementById('modalTitle').textContent = nombre;
     document.getElementById('modalImage').src = imagen;
     document.getElementById('modalDescription').textContent = descripcion;
@@ -74,6 +75,8 @@ function abrirModal(nombre, imagen, descripcion, sabores, precio) {
     
     document.getElementById('precioValue').textContent = precio.toFixed(2);
     document.getElementById('customModal').style.display = 'flex';
+    document.getElementById("modalButtons").innerHTML = `<button id="btn-order" class="btn-order" onclick="agregarCarrito('${nombre}','${categoria}' )" >Ordenar</button>
+                    <button class="btn-close" onclick="closeModal()">Cerrar</button>`;
 }
 
 // Cerrar modal
@@ -92,3 +95,4 @@ document.addEventListener('DOMContentLoaded', function() {
         link.removeAttribute('data-lightbox');
     });
 });
+
