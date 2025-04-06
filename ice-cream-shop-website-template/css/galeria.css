@@ -1,3 +1,4 @@
+
 /* Updated CSS */
 .portfolio-item {
     padding: 10px; /* Padding inside each item for spacing */
@@ -40,7 +41,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(128, 128, 128, 0.5); /* Gris transparente */
     opacity: 0;
     transition: all 0.5s ease;
 }
@@ -58,7 +59,7 @@
 /* Replace the large plus icon with a more subtle zoom indicator */
 .portfolio-btn i.fa-plus {
     font-size: 24px !important;
-    background-color: rgba(255, 255, 255, 0.7);
+    background: rgba(128, 128, 128, 0.5); /* Gris transparente */
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -66,10 +67,11 @@
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
+    color: white; /* Color del icono */
 }
 
 .portfolio-btn:hover i.fa-plus {
-    background-color: #fff;
+    background: rgba(128, 128, 128, 0.5); /* Gris transparente */
 }
 
 .custom-modal {
@@ -107,10 +109,11 @@
 }
 
 .modal-details {
-    flex: 1;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
+    margin-top: 75px;
+    padding: 20px 25px; 
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal-title {
@@ -264,20 +267,23 @@
 }
 
 .modal-description {
-    margin-bottom: 20px;
+    margin-bottom: 10px; 
     line-height: 1.6;
 }
 
+
 .modal-sabores h4, .modal-precio h4 {
+    margin-top: 0; /* Eliminar margen superior si existe */
     color: #f195b2;
     margin-bottom: 10px;
-    font-size: 1.1rem;
+    font-size: 1.1rem;;
+    
 }
 
 .modal-sabores ul {
     list-style: none;
     padding-left: 0;
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* Reducir de 20px a 15px */
 }
 
 .modal-sabores ul li {
@@ -336,13 +342,7 @@
     to { opacity: 1; transform: translateY(0); }
 }
 
-.portfolio-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    height: 300px;
- 
-}
+
 
 .portfolio-container img {
     height: 300px; /* Ajusta la altura según sea necesario */
@@ -355,5 +355,8 @@
     flex-wrap: wrap;
     justify-content: center;
     height: auto; /* Changed from 300px */
-    margin-bottom: 50px; /* Add space before footer */
+    height: 300px;
+    height: auto;
+    margin-bottom: 0; /* Remove this if you added it earlier */
 }
+
