@@ -1,6 +1,21 @@
 // Variables globales
 let productosData = null;
 
+//Filtrar desde otras pestanas
+document.addEventListener('DOMContentLoaded', function() {
+    // Espera a que se cargue la página
+    setTimeout(function() {
+        const hash = window.location.hash.substring(1);
+        if(hash) {
+            const filterButton = document.querySelector(`[data-filter=".${hash}"]`);
+            if(filterButton) {
+                filterButton.click(); // Simula clic en el filtro
+            }
+        }
+    }, 100);
+});
+
+
 // Cargar productos desde JSON
 function cargarProductos() {
     fetch('json/galeria.json')
