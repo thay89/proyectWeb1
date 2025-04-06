@@ -155,6 +155,36 @@
     
     <!-- Portfolio End -->
 
+    <!-- Custom Modal -->
+    <div id="customModal" class="custom-modal">
+        <span class="close-x" onclick="closeModal()">&times;</span>
+        <div class="custom-modal-content fade-in">
+            <div class="modal-image-container">
+                <img id="modalImage" class="modal-image" src="" alt="Product Image">
+            </div>
+            <div class="modal-details">
+                <h2 id="modalTitle" class="modal-title">Product Title</h2>
+                <div id="modalDescription" class="modal-description">
+                    Product description goes here. This will contain details about the product.
+                </div>
+                <div id="modalSabores" class="modal-sabores">
+                    <h4>Sabores disponibles:</h4>
+                    <ul id="saboresList">
+                        <!-- Sabores will be loaded here -->
+                    </ul>
+                </div>
+                <div id="modalPrecio" class="modal-precio">
+                    <h4>Precio: $<span id="precioValue">0.00</span></h4>
+                </div>
+                <div class="modal-buttons">
+                    <button class="btn-order" onclick="orderItem()">Ordenar</button>
+                    <button class="btn-close" onclick="closeModal()">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- Footer Start -->
     <div class="container-fluid footer py-5">
         <div class="container text-center py-5">

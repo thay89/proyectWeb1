@@ -44,7 +44,6 @@ function mostrarProductos(filtro = '*') {
                 itemElement.innerHTML = `
                     <div class="position-relative overflow-hidden mb-2">
                         <img class="img-fluid w-100" src="${producto.imagen}" alt="${producto.nombre}">
-
                         <div class="portfolio-btn d-flex align-items-center justify-content-center">
                             <a href="javascript:void(0);" onclick="abrirModal('${producto.nombre}', '${producto.imagen}', '${producto.descripcion}', ${JSON.stringify(producto.sabores).replace(/"/g, '&quot;')}, ${producto.precio})">
                                 <i class="fa fa-eye text-white" style="font-size: 60px;"></i>
@@ -122,4 +121,3 @@ $(document).ready(function() {
       });
     });
   });
->>>>>>> origin
