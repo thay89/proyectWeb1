@@ -12,14 +12,14 @@ function cerrarModalCarrito() {
 }
 
 // Funciones del carrito
-function agregarCarrito(nombre, categoria) {
+function agregarCarrito(id, categoria) {
    fetch('json/galeria.json')
    .then(res => res.json())
    .then(data => {
-    let producto = data.productos.find(p => p.categoria === categoria).items.find(p => p.nombre === nombre);
+    let producto = data.productos.find(p => p.categoria === categoria).items.find(p => p.id === id);
     if(producto) {
         carrito.push({
-            id: Date.now(),
+            id: producto.id,
             imagen: producto.imagen,
             nombre: producto.nombre,
             precio: producto.precio
