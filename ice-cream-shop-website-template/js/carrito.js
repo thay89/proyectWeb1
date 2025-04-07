@@ -101,8 +101,3 @@ function mostrar() {
     }
 }
 
-function procesarPago() {
-    alert("Pago procesado: $" + calcularTotal());
-    vaciarCarrito();
-    cerrarModalCarrito();
-}
