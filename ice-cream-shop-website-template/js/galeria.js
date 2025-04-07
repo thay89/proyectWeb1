@@ -45,7 +45,7 @@ function mostrarProductos(filtro = '*') {
                     <div class="position-relative overflow-hidden mb-2">
                         <img class="img-fluid w-100" src="${producto.imagen}" alt="${producto.nombre}">
                         <div class="portfolio-btn d-flex align-items-center justify-content-center">
-                            <a href="javascript:void(0);" onclick="abrirModal('${producto.nombre}', '${producto.imagen}', '${producto.descripcion}', ${JSON.stringify(producto.sabores).replace(/"/g, '&quot;')}, ${producto.precio})">
+                            <a href="javascript:void(0);" onclick="abrirModal('${producto.id}', '${categoria.categoria}')">
                                 <i class="fa fa-eye text-white" style="font-size: 60px;"></i>
                             </a>
                         </div>
@@ -74,10 +74,20 @@ function configurarFiltros() {
 }
 
 // Abrir modal con información del producto
-function abrirModal(nombre, imagen, descripcion, sabores, precio, categoria) {
-    document.getElementById('modalTitle').textContent = nombre;
-    document.getElementById('modalImage').src = imagen;
-    document.getElementById('modalDescription').textContent = descripcion;
+function abrirModal(id, categoria) {
+    let producto = productosData.productos.find(p => p.categoria === categoria).items.find(p => p.id === id);
+    
+    if (!producto) return;
+    console.log(producto);
+
+    const nombre = producto.nombre;
+    const imagen = producto.imagen;
+    const descripcion = producto.descripcion;
+    const precio = producto.precio;
+    const sabores = producto.sabores;
+    document.getElementById('modalTitle').textContent = producto.nombre;
+    document.getElementById('modalImage').src = producto.imagen;
+    document.getElementById('modalDescription').textContent = producto.descripcion;
     
     const saboresList = document.getElementById('saboresList');
     saboresList.innerHTML = '';
@@ -89,7 +99,7 @@ function abrirModal(nombre, imagen, descripcion, sabores, precio, categoria) {
     
     document.getElementById('precioValue').textContent = precio.toFixed(2);
     document.getElementById('customModal').style.display = 'flex';
-    document.getElementById("modalButtons").innerHTML = `<button id="btn-order" class="btn-order" onclick="agregarCarrito('${nombre}','${categoria}' )" >Ordenar</button>
+    document.getElementById("modalButtons").innerHTML = `<button id="btn-order" class="btn-order" onclick="agregarCarrito('${producto.id}','${categoria}' )" >Ordenar</button>
                     <button class="btn-close" onclick="closeModal()">Cerrar</button>`;
 }
 
