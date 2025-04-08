@@ -142,6 +142,7 @@
                         <li class="btn btn-sm btn-outline-primary m-1" data-filter=".Pasteleria">Pastelería</li>
                         <li class="btn btn-sm btn-outline-primary m-1" data-filter=".Reposteria">Repostería</li>
                         <li class="btn btn-sm btn-outline-primary m-1" data-filter=".Mesas-Dulces">Mesas Dulces</li>
+                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".Otros">Otros</li>
                     </ul>
                     
                 </div>
@@ -173,10 +174,18 @@
                         <!-- Sabores will be loaded here -->
                     </ul>
                 </div>
+                <div id="modalCantidad" class="modal-cantidad">
+                    <h4>Cantidad:</h4>
+                    <div class="quantity-selector">
+                        <button class="quantity-btn" onclick="decrementQuantity()">-</button>
+                        <input type="number" id="quantityInput" value="1" min="1" max="99">
+                        <button class="quantity-btn" onclick="incrementQuantity()">+</button>
+                    </div>
+                </div>
                 <div id="modalPrecio" class="modal-precio">
                     <h4>Precio: $<span id="precioValue">0.00</span></h4>
                 </div>
-                <div class="modal-buttons">
+                <div id="modalButtons" class="modal-buttons">
                     <button class="btn-order" onclick="orderItem()">Ordenar</button>
                     <button class="btn-close" onclick="closeModal()">Cerrar</button>
                 </div>

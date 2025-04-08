@@ -26,13 +26,14 @@ function cargarProductos() {
             configurarFiltros();
         })
         .catch(error => console.error('Error al cargar los datos:', error));
+
 }
 
 // Mostrar productos en la galería
 function mostrarProductos(filtro = '*') {
     const galeria = document.getElementById('product-gallery');
     galeria.innerHTML = '';
-    
+    galeria.style.height = 'auto'; 
     if (!productosData) return;
     
     productosData.productos.forEach(categoria => {
