@@ -13,11 +13,23 @@ function cerrarModalCarrito() {
 
 // Funciones del carrito
 function agregarCarrito(id, categoria) {
-   fetch('json/galeria.json')
-   .then(res => res.json())
-   .then(data => {
-    let producto = data.productos.find(p => p.categoria === categoria).items.find(p => p.id === id);
-    if(producto) {
+    const categoriaObj = productosData.productos.find(p => p.categoria === categoria);
+    if (!categoriaObj) return;
+
+    const producto = categoriaObj.items.find(p => p.id === id);
+    if (!producto) return;
+
+    const existe = carrito.some(item => item.id === id);
+    
+    // Mostrar notificación centrada
+    const mensaje = existe 
+        ? 'Este producto ya está en tu carrito' 
+        : `¡${producto.nombre} agregado!`;
+    const tipo = existe ? 'warning' : 'success';
+    
+    mostrarNotificacionCentrada(mensaje, tipo);
+
+    if (!existe) {
         carrito.push({
             id: producto.id,
             imagen: producto.imagen,
@@ -26,8 +38,27 @@ function agregarCarrito(id, categoria) {
         });
         guardarCarrito();
     }
-   })
-   .catch(err => console.error("Error al cargar el producto", err));
+}
+
+// Función para notificación centrada
+function mostrarNotificacionCentrada(mensaje, tipo) {
+    const notificacion = document.createElement('div');
+    notificacion.className = `notificacion-centrada alert-${tipo}`;
+    notificacion.textContent = mensaje;
+    document.body.appendChild(notificacion);
+    
+    notificacion.style.cssText = `
+    ${tipo === 'warning' ? 
+        'background: #bf2646; border: 2px solid #9c698b;' : 
+        'background: #901956; border: 2px solid #e87bb7;'
+    }
+`;
+
+
+    setTimeout(() => {
+        notificacion.classList.add('desvanecer');
+        setTimeout(() => notificacion.remove(), 300);
+    }, 2000);
 }
 
 function guardarCarrito() {

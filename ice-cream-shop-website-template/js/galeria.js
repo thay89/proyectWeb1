@@ -100,12 +100,15 @@ function abrirModal(id, categoria) {
     document.getElementById('precioValue').textContent = precio.toFixed(2);
     document.getElementById('customModal').style.display = 'flex';
     document.getElementById("modalButtons").innerHTML = `<button id="btn-order" class="btn-order" onclick="agregarCarrito('${producto.id}','${categoria}' )" >Ordenar</button>
-                    <button class="btn-close" onclick="closeModal()">Cerrar</button>`;
+                    <button class="btn-close" onclick="cerrarModal()">Cerrar</button>`;
 }
 
 // Cerrar modal
-function closeModal() {
-    document.getElementById('customModal').style.display = 'none';
+function cerrarModal() {
+    const modal = document.getElementById('customModal');
+    if (modal) {
+        modal.style.display = 'none';
+    }
 }
 
 
