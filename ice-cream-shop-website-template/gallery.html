@@ -96,7 +96,7 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <a href="factura.html" class="nav-item nav-link">Home</a>
                         <a href="about.html" class="nav-item nav-link">Nosotros</a>
                     </div>
                     <a href="index.html" class="navbar-brand mx-5 d-none d-lg-block">
@@ -142,6 +142,7 @@
                         <li class="btn btn-sm btn-outline-primary m-1" data-filter=".Pasteleria">Pastelería</li>
                         <li class="btn btn-sm btn-outline-primary m-1" data-filter=".Reposteria">Repostería</li>
                         <li class="btn btn-sm btn-outline-primary m-1" data-filter=".Mesas-Dulces">Mesas Dulces</li>
+                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".Otros">Otros</li>
                     </ul>
                     
                 </div>
@@ -154,8 +155,10 @@
     </div>
     
     <!-- Portfolio End -->
-    <!-- Custom Modal -->
-    <div id="customModal" class="custom-modal">
+
+
+       <!-- Custom Modal -->
+       <div id="customModal" class="custom-modal">
         <span class="close-x" onclick="closeModal()">&times;</span>
         <div class="custom-modal-content fade-in">
             <div class="modal-image-container">
@@ -200,10 +203,23 @@
                         <!-- Sabores will be loaded here -->
                     </ul>
                 </div>
+
+            
+                <div id="modalCantidad" class="modal-cantidad">
+                    <h4>Cantidad:</h4>
+                    <div class="quantity-selector">
+                        <button class="quantity-btn" onclick="decrementQuantity()">-</button>
+                        <input type="number" id="quantityInput" value="1" min="1" max="99">
+                        <button class="quantity-btn" onclick="incrementQuantity()">+</button>
+                    </div>
+                </div>    
+
                 <div id="modalPrecio" class="modal-precio">
                     <h4>Precio: $<span id="precioValue">0.00</span></h4>
                 </div>
-                <div class="modal-buttons">
+                
+                </div>
+                <div id="modalButtons" class="modal-buttons">
                     <button class="btn-order" onclick="orderItem()">Ordenar</button>
                     <button class="btn-close" onclick="closeModal()">Cerrar</button>
                 </div>
