@@ -21,7 +21,7 @@ function agregarCarrito(id, categoria) {
 
     const existe = carrito.some(item => item.id === id);
     
-    // Mostrar notificación centrada
+    // Mostrar notificación
     const mensaje = existe 
         ? 'Este producto ya está en tu carrito' 
         : `¡${producto.nombre} agregado!`;
