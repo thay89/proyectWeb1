@@ -47,6 +47,8 @@ function mostrarNotificacionCentrada(mensaje, tipo) {
     notificacion.textContent = mensaje;
     document.body.appendChild(notificacion);
     
+
+    /*Modificar*/
     notificacion.style.cssText = `
     ${tipo === 'warning' ? 
         'background: #bf2646; border: 2px solid #9c698b;' : 
@@ -82,7 +84,7 @@ function contador() {
 }
 
 function eliminarProd(id) {
-    // Filtra el carrito, manteniendo solo los productos con ID diferente
+    // Filtra el carrito, manteniendo los productos con ID diferente
     carrito = carrito.filter(p => p.id !== id);
     guardarCarrito(); // Guarda los cambios
     mostrar(); // Actualiza la vista del carrito
