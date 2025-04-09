@@ -82,9 +82,10 @@ function contador() {
 }
 
 function eliminarProd(id) {
+    // Filtra el carrito, manteniendo solo los productos con ID diferente
     carrito = carrito.filter(p => p.id !== id);
-    guardarCarrito();
-    mostrar();
+    guardarCarrito(); // Guarda los cambios
+    mostrar(); // Actualiza la vista del carrito
 }
 
 function vaciarCarrito() {
@@ -119,7 +120,7 @@ function mostrar() {
                 <div class="info-producto">
                     <h3>${item.nombre}</h3>
                     <p>$${item.precio.toFixed(2)}</p>
-                    <button onclick="eliminarProd(${item.id})" class="btn-eliminar">Eliminar</button>
+                     <button onclick="eliminarProd('${item.id}')" class="btn-eliminar">Eliminar</button>
                 </div>
             `;
             

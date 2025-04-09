@@ -1,0 +1,199 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura - Cupcake House</title>
+    <link rel="stylesheet" href="css/factura.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="container" id="invoice">
+        <!-- Cabecera de la factura -->
+        <div class="invoice-header">
+            <div class="logo-container">
+                <div class="logo-text"><span>Cupcake</span>House</div>
+            </div>
+            <div class="invoice-title">FACTURA</div>
+        </div>
+        
+        <!-- Información de la empresa y cliente -->
+        <div class="info-section">
+            <div class="company-info">
+                <div class="section-title">Datos de la Empresa</div>
+                <div class="info-content">
+                    <p><strong>Cupcake House</strong></p>
+                    <p>Limón, Pococí, Cariari</p>
+                    <p>Tel: +506 6280 5907</p>
+                    <p>info@cupcakehouse.com</p>
+                </div>
+                <div class="customer-info">
+                    <div class="section-title">Datos del Cliente</div>
+                    <div class="info-content">
+                        <p><strong>Número de Factura:</strong> <span id="invoiceNumber">0001</span></p>
+                        <p><strong>Fecha:</strong> <span id="invoiceDate">07/04/2025</span></p>
+                        <p><strong>Cliente:</strong> <input type="text" class="form-control client-input" placeholder="Nombre del cliente"></p>
+                        <p><strong>Teléfono:</strong> <input type="text" class="form-control client-input" placeholder="Teléfono del cliente"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Formulario para agregar producto -->
+        <div class="add-product-form" id="addProductForm">
+            <div class="section-title">Agregar Producto</div>
+            <div class="form-row" style="display: flex; gap: 10px;">
+                <div class="form-group" style="flex: 3;">
+                    <label for="productName">Producto</label>
+                    <input type="text" class="form-control" id="productName" placeholder="Nombre del producto">
+                </div>
+                <div class="form-group" style="flex: 1;">
+                    <label for="productPrice">Precio (₡)</label>
+                    <input type="number" class="form-control" id="productPrice" placeholder="0.00">
+                </div>
+                <div class="form-group" style="flex: 1;">
+                    <label for="productQty">Cantidad</label>
+                    <input type="number" class="form-control" id="productQty" value="1" min="1">
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="action-btn add-item-btn" id="cancelAddProduct">Cancelar</button>
+                <button type="button" class="action-btn print-btn" id="confirmAddProduct">Agregar</button>
+            </div>
+        </div>
+        
+        <!-- Tabla de productos -->
+        <div class="products-section">
+            <div class="section-title">Detalle de Productos</div>
+            <table class="products-table" id="productsTable">
+                <thead>
+                    <tr>
+                        <th style="width: 50%;">Descripción</th>
+                        <th style="width: 15%;">Cantidad</th>
+                        <th style="width: 15%;">Precio</th>
+                        <th style="width: 15%;">Total</th>
+                        <th style="width: 5%;"></th>
+                    </tr>
+                </thead>
+                <tbody id="productsList">
+                    <!-- Los productos se agregarán aquí dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Sección de totales -->
+        <div class="totals-section">
+            <table class="totals-table">
+                <tr>
+                    <td class="label">Subtotal:</td>
+                    <td class="value">₡<span id="subtotal">0.00</span></td>
+                </tr>
+                <tr>
+                    <td class="label">IVA (13%):</td>
+                    <td class="value">₡<span id="tax">0.00</span></td>
+                </tr>
+                <tr class="grand-total">
+                    <td class="label">Total:</td>
+                    <td class="value">₡<span id="total">0.00</span></td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Sección de método de pago -->
+        <div class="payment-section">
+            <div class="section-title">Método de Pago</div>
+            <div class="payment-options">
+                <label class="payment-radio">
+                    <input type="radio" name="paymentMethod" value="cash" checked> Efectivo
+                </label>
+                <label class="payment-radio">
+                    <input type="radio" name="paymentMethod" value="card"> Tarjeta de Crédito/Débito
+                </label>
+            </div>
+            
+            <!-- Contenedor de la tarjeta y formulario -->
+            <div class="credit-card-container" id="creditCardContainer">
+                <!-- Visualización de la tarjeta -->
+                <div class="card-wrapper">
+                    <div class="credit-card" id="creditCard">
+                        <div class="credit-card-front">
+                            <div class="card-type">
+                                <img src="img/visa.png" alt="Visa" class="visa-icon" id="visaIcon">
+                                <img src="img/master.png" alt="Mastercard" class="mastercard-icon" id="mastercardIcon">
+                            </div>
+                            <div class="card-number" id="cardNumberDisplay">•••• •••• •••• ••••</div>
+                            <div class="card-details">
+                                <div class="card-holder">
+                                    <div>Titular</div>
+                                    <div id="cardHolderDisplay">NOMBRE DEL TITULAR</div>
+                                </div>
+                                <div class="card-expiry">
+                                    <div>Válida hasta</div>
+                                    <div id="cardExpiryDisplay">MM/AA</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="credit-card-back">
+                            <div class="card-stripe"></div>
+                            <div class="card-ccv">
+                                <div>CCV</div>
+                                <div id="cardCcvDisplay">•••</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Formulario de la tarjeta -->
+                <div class="credit-card-form">
+                    <div class="card-form-row">
+                        <div class="card-form-group">
+                            <label for="cardNumber">Número de Tarjeta</label>
+                            <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
+                        </div>
+                    </div>
+                    <div class="card-form-row">
+                        <div class="card-form-group">
+                            <label for="cardHolder">Nombre del Titular</label>
+                            <input type="text" id="cardHolder" placeholder="NOMBRE COMPLETO">
+                        </div>
+                    </div>
+                    <div class="card-form-row">
+                        <div class="card-form-group">
+                            <label for="cardExpiry">Fecha de Vencimiento</label>
+                            <input type="text" id="cardExpiry" placeholder="MM/AA" maxlength="5">
+                        </div>
+                        <div class="card-form-group">
+                            <label for="cardCcv">CCV</label>
+                            <input type="text" id="cardCcv" placeholder="123" maxlength="3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sección de notas -->
+        <div class="notes-section">
+            <div class="section-title">Notas / Términos</div>
+            <div class="notes-content">
+                <p>Gracias por su compra. Los pagos deben realizarse dentro de 15 días.</p>
+                <p>Para cualquier consulta sobre esta factura, por favor contáctenos.</p>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="invoice-footer">
+            <p>Cupcake House - Deliciosos momentos, dulces recuerdos</p>
+        </div>
+    </div>
+    
+    <!-- Botones de acción -->
+    <div class="actions-section">
+        <button class="action-btn add-item-btn" id="showAddProduct">Cancelar Factura</button>
+        <button class="action-btn print-btn" id="printInvoice">Enviar Factura</button>
+    </div>
+
+    <script src="js/factura.js"></script>
+</body>
+</html>
