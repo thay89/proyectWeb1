@@ -122,14 +122,6 @@
             "descripcion": "Delicioso pastel de chocolate con tres capas y cubierta de ganache.",
             "sabores": ["Chocolate", "Trufa", "Avellana"],
             "precio": 15.0
-          },
-          {
-            "id" : "pastel16",
-            "nombre": "Pastel de Chocolate",
-            "imagen": "img/seccion_productos/pasteleria/pastel16.jpeg",
-            "descripcion": "Delicioso pastel de chocolate con tres capas y cubierta de ganache.",
-            "sabores": ["Chocolate", "Trufa", "Avellana"],
-            "precio": 15.0
           }
         ]
       },
