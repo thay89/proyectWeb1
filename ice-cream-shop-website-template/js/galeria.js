@@ -1,5 +1,7 @@
-// Variables globales
 let productosData = null;
+let saborSeleccionado = "";
+let cantidadSeleccionada = 1;
+let productoActual = null;
 
 //Filtrar desde otras pestanas
 document.addEventListener('DOMContentLoaded', function() {
@@ -9,12 +11,14 @@ document.addEventListener('DOMContentLoaded', function() {
         if(hash) {
             const filterButton = document.querySelector(`[data-filter=".${hash}"]`);
             if(filterButton) {
-                filterButton.click(); // Simula clic en el filtro
+                filterButton.click(); 
             }
         }
     }, 100);
+    
+    // Inicializar el contador del carrito
+    actualizarContadorCarrito();
 });
-
 
 // Cargar productos desde JSON
 function cargarProductos() {
@@ -26,7 +30,6 @@ function cargarProductos() {
             configurarFiltros();
         })
         .catch(error => console.error('Error al cargar los datos:', error));
-
 }
 
 // Mostrar productos en la galería
@@ -79,29 +82,59 @@ function abrirModal(id, categoria) {
     let producto = productosData.productos.find(p => p.categoria === categoria).items.find(p => p.id === id);
     
     if (!producto) return;
-    console.log(producto);
-
-    const nombre = producto.nombre;
-    const imagen = producto.imagen;
-    const descripcion = producto.descripcion;
-    const precio = producto.precio;
-    const sabores = producto.sabores;
+    productoActual = producto; // Guardar el producto actual
+    
     document.getElementById('modalTitle').textContent = producto.nombre;
     document.getElementById('modalImage').src = producto.imagen;
     document.getElementById('modalDescription').textContent = producto.descripcion;
     
-    const saboresList = document.getElementById('saboresList');
-    saboresList.innerHTML = '';
-    sabores.forEach(sabor => {
-        const li = document.createElement('li');
-        li.textContent = sabor;
-        saboresList.appendChild(li);
+    // Cambiar la lista de sabores por un selector
+    const saboresContainer = document.getElementById('modalSabores');
+    saboresContainer.innerHTML = '<h4>Selecciona un sabor:</h4>';
+    
+    // Crear el selector de sabores
+    const saborSelect = document.createElement('select');
+    saborSelect.id = 'saborSelect';
+    saborSelect.className = 'form-control';
+    saborSelect.style = 'width: 100%; margin-top: 5px;';
+    
+    // Agregar los sabores como opciones
+    producto.sabores.forEach(sabor => {
+        const option = document.createElement('option');
+        option.value = sabor;
+        option.textContent = sabor;
+        saborSelect.appendChild(option);
     });
     
-    document.getElementById('precioValue').textContent = precio.toFixed(2);
+    // Agregar evento para actualizar la variable global cuando se cambie el sabor
+    saborSelect.addEventListener('change', function() {
+        saborSeleccionado = this.value;
+        console.log('Sabor seleccionado:', saborSeleccionado);
+    });
+    
+    saboresContainer.appendChild(saborSelect);
+    
+    // Establecer el primer sabor como seleccionado por defecto
+    if (producto.sabores.length > 0) {
+        saborSeleccionado = producto.sabores[0];
+    }
+    
+    // Configurar el contador de cantidad
+    const cantidadInput = document.getElementById('cantidadInput');
+    cantidadInput.value = 1;
+    cantidadSeleccionada = 1; // Restablecer a 1 cada vez que se abre el modal
+    
+    cantidadInput.addEventListener('change', function() {
+        cantidadSeleccionada = parseInt(this.value);
+        console.log('Cantidad seleccionada:', cantidadSeleccionada);
+    });
+    
+    document.getElementById('precioValue').textContent = producto.precio.toFixed(2);
     document.getElementById('customModal').style.display = 'flex';
-    document.getElementById("modalButtons").innerHTML = `<button id="btn-order" class="btn-order" onclick="agregarCarrito('${producto.id}','${categoria}' )" >Ordenar</button>
-                    <button class="btn-close" onclick="cerrarModal()">Cerrar</button>`;
+    document.getElementById("modalButtons").innerHTML = `
+        <button id="btn-order" class="btn-order" onclick="agregarCarrito('${producto.id}','${categoria}')" >Ordenar</button>
+        <button class="btn-close" onclick="cerrarModal()">Cerrar</button>
+    `;
 }
 
 // Cerrar modal
@@ -112,6 +145,76 @@ function cerrarModal() {
     }
 }
 
+// Agregar producto al carrito
+function agregarCarrito(id, categoria) {
+    // Asegurar que tengamos los valores actualizados antes de agregar al carrito
+    const cantidad = cantidadSeleccionada;
+    const sabor = saborSeleccionado;
+    
+    // Asegurar que hay un sabor seleccionado y una cantidad válida
+    if (!sabor || cantidad < 1) {
+        alert('Por favor selecciona un sabor y una cantidad válida');
+        return;
+    }
+    
+    // Preparar el producto con el sabor y cantidad seleccionados
+    const productoConSabor = {
+        id: productoActual.id,
+        nombre: productoActual.nombre,
+        precio: productoActual.precio,
+        imagen: productoActual.imagen,
+        saborElegido: sabor,
+        cantidad: cantidad
+    };
+    
+    // Agregar al carrito
+    addToCart(productoConSabor);
+    
+    // Cerrar el modal después de agregar al carrito
+    cerrarModal();
+}
+
+// Función para agregar al carrito
+function addToCart(producto) {
+    // Recuperar carrito actual del localStorage o inicializar nuevo
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    
+    // Verificar si el producto ya está en el carrito con el mismo sabor
+    const index = carrito.findIndex(item => 
+        item.id === producto.id && item.saborElegido === producto.saborElegido
+    );
+    
+    if (index !== -1) {
+        // Si ya existe, aumentar la cantidad
+        carrito[index].cantidad += producto.cantidad;
+    } else {
+        // Si no existe, añadir nuevo item
+        carrito.push({
+            id: producto.id,
+            nombre: producto.nombre,
+            precio: producto.precio,
+            imagen: producto.imagen,
+            saborElegido: producto.saborElegido,
+            cantidad: producto.cantidad
+        });
+    }
+    
+    // Guardar en localStorage
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    
+    // Actualizar el contador del carrito
+    actualizarContadorCarrito();
+    
+    // Mostrar confirmación
+    alert(`${producto.cantidad} ${producto.nombre} (${producto.saborElegido}) agregado al carrito`);
+}
+
+// Actualizar el contador del carrito
+function actualizarContadorCarrito() {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const totalItems = carrito.reduce((total, item) => total + item.cantidad, 0);
+    document.getElementById('contCarrito').textContent = totalItems;
+}
 
 // Inicializar cuando se cargue la página
 document.addEventListener('DOMContentLoaded', cargarProductos);
@@ -124,15 +227,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Make sure your gallery items are properly contained
 $(document).ready(function() {
-    // After your items load
     $('.portfolio-container').imagesLoaded(function() {
-      // Initialize isotope after all images are loaded
       $('.portfolio-container').isotope({
         itemSelector: '.portfolio-item',
         layoutMode: 'fitRows'
       });
     });
-  });
-
+});

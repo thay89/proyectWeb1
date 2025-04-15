@@ -86,17 +86,6 @@
     background-color: rgba(0,0,0,0.8);
 }
 
-.custom-modal-content {
-    display: flex;
-    flex-direction: column;
-    margin: 5% auto;
-    width: 90%;
-    max-width: 900px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    overflow: hidden;
-}
 
 .modal-image-container {
     flex: 1;
@@ -131,10 +120,6 @@
     line-height: 1.6;
 }
 
-.modal-buttons {
-    display: flex;
-    justify-content: space-between;
-}
 
 .btn-order {
     background-color: #F195B2; /* Primary color from your theme */
@@ -207,6 +192,7 @@
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     overflow: hidden;
+    position: relative;
 }
 
 @media (min-width: 768px) {
@@ -351,17 +337,22 @@
 
 .modal-buttons {
     display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+    position: static; /* Position absolutely */
+    bottom: 20px; /* Distance from bottom */
+    left: 20px; /* Distance from left */
 }
 
 .btn-order, .btn-close {
-    padding: 10px 20px;
+    padding: 8px 15px;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
     cursor: pointer;
     font-weight: 500;
     transition: all 0.3s ease;
+    font-size: 14px;
+    width: 100px; /* Set a fixed width */
 }
 
 .btn-order {
@@ -453,4 +444,73 @@
         right: 15px;
         font-size: 30px; /* Hacer más grande el botón de cerrar */
     }
+}
+
+/* Estilo para el selector de sabores */
+#saborSelect {
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 0 10px;
+    background-color: #fff;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+#saborSelect:focus {
+    outline: none;
+    border-color: #F195B2; /* Color primario de tu tema */
+    box-shadow: 0 0 5px rgba(241, 149, 178, 0.5);
+}
+
+/* Mejorar el aspecto del input de cantidad */
+#cantidadInput {
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+#cantidadInput:focus {
+    outline: none;
+    border-color: #F195B2; /* Color primario de tu tema */
+    box-shadow: 0 0 5px rgba(241, 149, 178, 0.5);
+}
+
+/* Ajustes para los botones */
+.modal-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn-order, .btn-close {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-order {
+    background-color: #F195B2; /* Color primario */
+    color: white;
+}
+
+.btn-order:hover {
+    background-color: #e07c9a; /* Versión más oscura */
+}
+
+.btn-close {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.btn-close:hover {
+    background-color: #e0e0e0;
 }
