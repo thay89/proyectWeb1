@@ -514,3 +514,50 @@
 .btn-close:hover {
     background-color: #e0e0e0;
 }
+
+
+
+/* Asegura que el body tenga un mínimo de altura de la ventana completa */
+html, body {
+    min-height: 100%;
+    position: relative;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* viewport height */
+}
+
+/* El contenedor principal debe crecer para ocupar el espacio disponible */
+.container-fluid.py-5.px-0 {
+    flex: 1;
+}
+
+/* Asegúrate de que la galería tenga una altura mínima para evitar superposiciones */
+#product-gallery {
+    min-height: 400px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Footer siempre al final */
+.footer {
+    position: relative;
+    width: 100%;
+    z-index: 0;
+    margin-top: auto;
+}
+
+/* Estilos adicionales para pantallas pequeñas */
+@media (max-width: 768px) {
+    #product-gallery {
+        min-height: 300px;
+    }
+    
+    /* Asegúrate de que haya espacio suficiente antes del footer */
+    .container-fluid.py-5.px-0 {
+        margin-bottom: 20px;
+    }
+}
+
