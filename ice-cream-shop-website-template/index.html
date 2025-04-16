@@ -45,7 +45,31 @@
                     <div class="d-inline-flex align-items-center">
                         <a class="text-white px-3" href="carrito.html">
                             <i class="fas fa-shopping-cart"></i>
-                        </a>
+                            <span id="contCarrito" class="contador-carrito">0</span>
+                        </div>
+
+                        <div id="modal-carrito" class="modal">
+                            <div class="modal-contenido">
+                                <div class="modal-header">
+                                    <h2>Tu Carrito</h2>
+                                    <span class="cerrar-modal" onclick="cerrarModalCarrito()">&times;</span>
+                                </div>
+                                
+                                <div id="contenedor-carrito" class="contenedor-productos">
+                                </div>
+                                
+                                <div class="total">
+                                    <h3>Total: $<span id="carrito-total">0.00</span></h3>
+                                </div>
+                                
+                                <div class="modal-footer">
+                                    <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+                                    <a href="factura.html"><button>Pagar</button></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        
                         <a class="text-white px-3" href="contact.html">
                             <i class="fas fa-envelope"></i>
                         </a>
