@@ -24,6 +24,8 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/galeria.css" rel="stylesheet">
+    <link href="css/carrito.css" rel="stylesheet">
 </head>
 
 <body>
@@ -41,9 +43,10 @@
                     </div>
                 </div>
                 <div class="col-md-6 text-center text-lg-right">
-                      <div class="col-md-6 text-center text-lg-right">
                     <div class="d-inline-flex align-items-center">
-                        <a class="text-white px-3" href="carrito.html">
+
+                          <!-- Modal del Carrito -->
+                          <div class="carrito-icon" onclick="abrirModalCarrito()">
                             <i class="fas fa-shopping-cart"></i>
                             <span id="contCarrito" class="contador-carrito">0</span>
                         </div>
@@ -103,6 +106,15 @@
                     <div class="navbar-nav mr-auto py-0">
                         <a href="gallery.html" class="nav-item nav-link">Galeria</a> 
                         <a href="product.html" class="nav-item nav-link">Productos</a>
+                    </div>
+                    <div class="d-lg-none mobile-nav-icons ml-auto">
+                       <a href="#" onclick="abrirModalCarrito()" class="nav-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="contCarrito" class="contador-carrito">0</span>
+                    </a>
+                        <a href="contact.html" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
                     </div>
                 </div>
             </nav>
@@ -640,6 +652,8 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script src="js/galeria.js"></script>
+    <script src="js/carrito.js"></script>
 </body>
 
 </html>
