@@ -34,7 +34,8 @@ function agregarCarrito(id, categoria) {
             id: producto.id,
             imagen: producto.imagen,
             nombre: producto.nombre,
-            precio: producto.precio
+            precio: producto.precio,
+            cantidad: 1
         });
         guardarCarrito();
     }
@@ -65,15 +66,16 @@ function mostrarNotificacionCentrada(mensaje, tipo) {
 
 function guardarCarrito() {
     localStorage.setItem("carrito", JSON.stringify(carrito));
-    cargarCarrito();
+    actualizarContadores();
+    mostrar();
 }
 
 function cargarCarrito() {
-   let c = localStorage.getItem("carrito");
-   if(c) {
+    let c = localStorage.getItem("carrito");
+    if(c) {
         carrito = JSON.parse(c);
-   }
-   contador();
+    }
+    actualizarContadores();
 }
 
 function contador() {
@@ -135,3 +137,22 @@ function mostrar() {
     }
 }
 
+function actualizarContadores() {
+    const totalItems = carrito.reduce((total, item) => total + (item.cantidad || 1), 0);
+    
+    // Actualizar todos los contadores con el mismo ID
+    const contadores = document.querySelectorAll('#contCarrito');
+    contadores.forEach(contador => {
+        contador.textContent = totalItems;
+    });
+    
+    // También actualizar por clase por si acaso
+    const contadoresClase = document.querySelectorAll('.contador-carrito');
+    contadoresClase.forEach(contador => {
+        contador.textContent = totalItems;
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    cargarCarrito();
+});
