@@ -6,7 +6,7 @@
           {
             "id" : "pastel1",
             "nombre": "Pastel de Chocolate",
-            "imagen": "img/galeria1.jpeg",
+            "imagen": "img/seccion_productos/pasteleria/pastel1.jpeg",
             "descripcion": "Delicioso pastel de chocolate con tres capas y cubierta de ganache.",
             "sabores": ["Chocolate", "Trufa", "Avellana"],
             "precio": 15.0
@@ -14,7 +14,7 @@
           {
             "id" : "pastel2",
             "nombre": "Pastel de Chocolate",
-            "imagen": "img/galeria2.jpeg",
+            "imagen": "img/seccion_productos/pasteleria/pastel2.jpeg",
             "descripcion": "Delicioso pastel de chocolate con tres capas y cubierta de ganache.",
             "sabores": ["Chocolate", "Trufa", "Avellana"],
             "precio": 15.0
@@ -22,7 +22,7 @@
           {
             "id" : "pastel3",
             "nombre": "Pastel de Chocolate",
-            "imagen": "img/galeria3.jpeg",
+            "imagen": "img/seccion_productos/pasteleria/pastel3.jpeg",
             "descripcion": "Delicioso pastel de chocolate con tres capas y cubierta de ganache.",
             "sabores": ["Chocolate", "Trufa", "Avellana"],
             "precio": 15.0
@@ -30,7 +30,7 @@
           {
             "id" : "pastel4",
             "nombre": "Pastel de Chocolate",
-            "imagen": "img/galeria4.jpeg",
+            "imagen": "img/seccion_productos/pasteleria/pastel4.jpeg",
             "descripcion": "Delicioso pastel de chocolate con tres capas y cubierta de ganache.",
             "sabores": ["Chocolate", "Trufa", "Avellana"],
             "precio": 15.0
@@ -38,7 +38,7 @@
           {
             "id" : "pastel5",
             "nombre": "Pastel de Chocolate",
-            "imagen": "img/galeria6.jpeg",
+            "imagen": "img/seccion_productos/pasteleria/pastel5.jpeg",
             "descripcion": "Delicioso pastel de chocolate con tres capas y cubierta de ganache.",
             "sabores": ["Chocolate", "Trufa", "Avellana"],
             "precio": 15.0
@@ -46,10 +46,82 @@
           {
              "id" : "pastel6",
             "nombre": "Cupcakes de Vainilla",
-            "imagen": "img/galeria6.jpeg",
+            "imagen": "img/seccion_productos/pasteleria/pastel6.jpeg",
             "descripcion": "Cupcakes de vainilla con crema de mantequilla y decoraciones artesanales.",
             "sabores": ["Vainilla", "Fresa", "Red Velvet"],
             "precio": 3.0
+          },
+          {
+            "id" : "pastel7",
+            "nombre": "Pastel de Chocolate",
+            "imagen": "img/seccion_productos/pasteleria/pastel7.jpeg",
+            "descripcion": "Delicioso pastel de chocolate con tres capas y cubierta de ganache.",
+            "sabores": ["Chocolate", "Trufa", "Avellana"],
+            "precio": 15.0
+          },
+          {
+            "id" : "pastel8",
+            "nombre": "Pastel de Chocolate",
+            "imagen": "img/seccion_productos/pasteleria/pastel8.jpeg",
+            "descripcion": "Delicioso pastel de chocolate con tres capas y cubierta de ganache.",
+            "sabores": ["Chocolate", "Trufa", "Avellana"],
+            "precio": 15.0
+          },
+          {
+            "id" : "pastel9",
+            "nombre": "Pastel de Chocolate",
+            "imagen": "img/seccion_productos/pasteleria/pastel9.jpeg",
+            "descripcion": "Delicioso pastel de chocolate con tres capas y cubierta de ganache.",
+            "sabores": ["Chocolate", "Trufa", "Avellana"],
+            "precio": 15.0
+          },
+          {
+            "id" : "pastel10",
+            "nombre": "Pastel de Chocolate",
+            "imagen": "img/seccion_productos/pasteleria/pastel10.jpeg",
+            "descripcion": "Delicioso pastel de chocolate con tres capas y cubierta de ganache.",
+            "sabores": ["Chocolate", "Trufa", "Avellana"],
+            "precio": 15.0
+          },
+          {
+            "id" : "pastel11",
+            "nombre": "Pastel de Chocolate",
+            "imagen": "img/seccion_productos/pasteleria/pastel11.jpeg",
+            "descripcion": "Delicioso pastel de chocolate con tres capas y cubierta de ganache.",
+            "sabores": ["Chocolate", "Trufa", "Avellana"],
+            "precio": 15.0
+          },
+          {
+            "id" : "pastel12",
+            "nombre": "Pastel de Chocolate",
+            "imagen": "img/seccion_productos/pasteleria/pastel12.jpeg",
+            "descripcion": "Delicioso pastel de chocolate con tres capas y cubierta de ganache.",
+            "sabores": ["Chocolate", "Trufa", "Avellana"],
+            "precio": 15.0
+          },
+          {
+            "id" : "pastel13",
+            "nombre": "Pastel de Chocolate",
+            "imagen": "img/seccion_productos/pasteleria/pastel13.jpeg",
+            "descripcion": "Delicioso pastel de chocolate con tres capas y cubierta de ganache.",
+            "sabores": ["Chocolate", "Trufa", "Avellana"],
+            "precio": 15.0
+          },
+          {
+            "id" : "pastel14",
+            "nombre": "Pastel de Chocolate",
+            "imagen": "img/seccion_productos/pasteleria/pastel14.jpeg",
+            "descripcion": "Delicioso pastel de chocolate con tres capas y cubierta de ganache.",
+            "sabores": ["Chocolate", "Trufa", "Avellana"],
+            "precio": 15.0
+          },
+          {
+            "id" : "pastel15",
+            "nombre": "Pastel de Chocolate",
+            "imagen": "img/seccion_productos/pasteleria/pastel15.jpeg",
+            "descripcion": "Delicioso pastel de chocolate con tres capas y cubierta de ganache.",
+            "sabores": ["Chocolate", "Trufa", "Avellana"],
+            "precio": 15.0
           }
         ]
       },
@@ -59,7 +131,7 @@
           {
             "id" : "reposteria1",
             "nombre": "Galletas Decoradas",
-            "imagen": "img/galeria7.jpeg",
+            "imagen": "img/seccion_productos/reposteria/reposteria1.jpeg",
             "descripcion": "Galletas de mantequilla decoradas a mano con glaseado real.",
             "sabores": ["Vainilla", "Chocolate"],
             "precio": 2.5
@@ -67,7 +139,7 @@
           {
             "id" : "reposteria2",
             "nombre": "Galletas Decoradas",
-            "imagen": "img/galeria21.jpeg",
+            "imagen": "img/seccion_productos/reposteria/reposteria2.jpeg",
             "descripcion": "Galletas de mantequilla decoradas a mano con glaseado real.",
             "sabores": ["Vainilla", "Chocolate"],
             "precio": 2.5
@@ -75,7 +147,7 @@
           {
             "id" : "reposteria3",
             "nombre": "Galletas Decoradas",
-            "imagen": "img/galeria27.jpeg",
+            "imagen": "img/seccion_productos/reposteria/reposteria3.jpeg",
             "descripcion": "Galletas de mantequilla decoradas a mano con glaseado real.",
             "sabores": ["Vainilla", "Chocolate"],
             "precio": 2.5
@@ -83,7 +155,7 @@
           {
             "id" : "reposteria4",
             "nombre": "Galletas Decoradas",
-            "imagen": "img/galeria25.jpeg",
+            "imagen": "img/seccion_productos/reposteria/reposteria4.jpeg",
             "descripcion": "Galletas de mantequilla decoradas a mano con glaseado real.",
             "sabores": ["Vainilla", "Chocolate"],
             "precio": 2.5
@@ -91,7 +163,7 @@
           {
             "id" : "reposteria5",
             "nombre": "Galletas Decoradas",
-            "imagen": "img/galeria23.jpeg",
+            "imagen": "img/seccion_productos/reposteria/reposteria5.jpeg",
             "descripcion": "Galletas de mantequilla decoradas a mano con glaseado real.",
             "sabores": ["Vainilla", "Chocolate"],
             "precio": 2.5
@@ -99,7 +171,7 @@
           {
            "id" : "reposteria6",
             "nombre": "Galletas Decoradas",
-            "imagen": "img/galeria12.jpeg",
+            "imagen": "img/seccion_productos/reposteria/reposteria6.jpeg",
             "descripcion": "Galletas de mantequilla decoradas a mano con glaseado real.",
             "sabores": ["Vainilla", "Chocolate"],
             "precio": 2.5
@@ -154,6 +226,171 @@
             "id" : "mesa6",
             "nombre": "Mesa Dulce de Bodas",
             "imagen": "img/galeria18.jpeg",
+            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
+            "sabores": ["Chocolate", "Frutas", "Crema"],
+            "precio": 100.0
+          }
+        ]
+      },
+      {
+        "categoria": "Otros",
+        "items": [
+          {
+            "id" : "otro1",
+            "nombre": "Mesa Dulce de Bodas",
+            "imagen": "img/seccion_productos/otros/otro1.jpeg",
+            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
+            "sabores": ["Chocolate", "Frutas", "Crema"],
+            "precio": 100.0
+          },
+          {
+            "id" : "otro2",
+            "nombre": "Cupcakes",
+            "imagen": "img/seccion_productos/otros/otro2.jpeg",
+            "descripcion": "Cupcakes Personalizados!!!.",
+            "sabores": ["Vainilla", "Frutas", "Crema"],
+            "precio": 100.0
+          },
+          {
+            "id" : "otro3",
+            "nombre": "Mesa Dulce de Bodas",
+            "imagen": "img/seccion_productos/otros/otro3.jpeg",
+            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
+            "sabores": ["Chocolate", "Frutas", "Crema"],
+            "precio": 100.0
+          },
+          {
+            "id" : "otro4",
+            "nombre": "Mesa Dulce de Bodas",
+            "imagen": "img/seccion_productos/otros/otro4.jpeg",
+            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
+            "sabores": ["Chocolate", "Frutas", "Crema"],
+            "precio": 100.0
+          },
+          {
+            "id" : "otro5",
+            "nombre": "Mesa Dulce de Bodas",
+            "imagen": "img/seccion_productos/otros/otro5.jpeg",
+            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
+            "sabores": ["Chocolate", "Frutas", "Crema"],
+            "precio": 100.0
+          },
+          {
+            "id" : "otro6",
+            "nombre": "Mesa Dulce de Bodas",
+            "imagen": "img/seccion_productos/otros/otro6.jpeg",
+            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
+            "sabores": ["Chocolate", "Frutas", "Crema"],
+            "precio": 100.0
+          },
+          {
+            "id" : "otro7",
+            "nombre": "Mesa Dulce de Bodas",
+            "imagen": "img/seccion_productos/otros/otro7.jpeg",
+            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
+            "sabores": ["Chocolate", "Frutas", "Crema"],
+            "precio": 100.0
+          },
+          {
+            "id" : "otro8",
+            "nombre": "Mesa Dulce de Bodas",
+            "imagen": "img/seccion_productos/otros/otro8.jpeg",
+            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
+            "sabores": ["Chocolate", "Frutas", "Crema"],
+            "precio": 100.0
+          },
+          {
+            "id" : "otro9",
+            "nombre": "Mesa Dulce de Bodas",
+            "imagen": "img/seccion_productos/otros/otro9.jpeg",
+            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
+            "sabores": ["Chocolate", "Frutas", "Crema"],
+            "precio": 100.0
+          },
+          {
+            "id" : "otro10",
+            "nombre": "Mesa Dulce de Bodas",
+            "imagen": "img/seccion_productos/otros/otro10.jpeg",
+            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
+            "sabores": ["Chocolate", "Frutas", "Crema"],
+            "precio": 100.0
+          },
+          {
+            "id" : "otro11",
+            "nombre": "Mesa Dulce de Bodas",
+            "imagen": "img/seccion_productos/otros/otro11.jpeg",
+            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
+            "sabores": ["Chocolate", "Frutas", "Crema"],
+            "precio": 100.0
+          },
+          {
+            "id" : "otro12",
+            "nombre": "Mesa Dulce de Bodas",
+            "imagen": "img/seccion_productos/otros/otro12.jpeg",
+            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
+            "sabores": ["Chocolate", "Frutas", "Crema"],
+            "precio": 100.0
+          },
+          {
+            "id" : "otro13",
+            "nombre": "Mesa Dulce de Bodas",
+            "imagen": "img/seccion_productos/otros/otro13.jpeg",
+            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
+            "sabores": ["Chocolate", "Frutas", "Crema"],
+            "precio": 100.0
+          },
+          {
+            "id" : "otro14",
+            "nombre": "Mesa Dulce de Bodas",
+            "imagen": "img/seccion_productos/otros/otro14.jpeg",
+            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
+            "sabores": ["Chocolate", "Frutas", "Crema"],
+            "precio": 100.0
+          },
+          {
+            "id" : "otro15",
+            "nombre": "Mesa Dulce de Bodas",
+            "imagen": "img/seccion_productos/otros/otro15.jpeg",
+            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
+            "sabores": ["Chocolate", "Frutas", "Crema"],
+            "precio": 100.0
+          },
+          {
+            "id" : "otro16",
+            "nombre": "Mesa Dulce de Bodas",
+            "imagen": "img/seccion_productos/otros/otro16.jpeg",
+            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
+            "sabores": ["Chocolate", "Frutas", "Crema"],
+            "precio": 100.0
+          },
+          {
+            "id" : "otro17",
+            "nombre": "Mesa Dulce de Bodas",
+            "imagen": "img/seccion_productos/otros/otro17.jpeg",
+            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
+            "sabores": ["Chocolate", "Frutas", "Crema"],
+            "precio": 100.0
+          },
+          {
+            "id" : "otro18",
+            "nombre": "Mesa Dulce de Bodas",
+            "imagen": "img/seccion_productos/otros/otro18.jpeg",
+            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
+            "sabores": ["Chocolate", "Frutas", "Crema"],
+            "precio": 100.0
+          },
+          {
+            "id" : "otro19",
+            "nombre": "Mesa Dulce de Bodas",
+            "imagen": "img/seccion_productos/otros/otro19.jpeg",
+            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
+            "sabores": ["Chocolate", "Frutas", "Crema"],
+            "precio": 100.0
+          },
+          {
+            "id" : "otro20",
+            "nombre": "Mesa Dulce de Bodas",
+            "imagen": "img/seccion_productos/otros/otro20.jpeg",
             "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
             "sabores": ["Chocolate", "Frutas", "Crema"],
             "precio": 100.0

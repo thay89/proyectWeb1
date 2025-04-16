@@ -8,7 +8,6 @@
     <meta content="Panadería, Repostería, Pastelería" name="keywords">
     <meta content="Deliciosos productos de pastelería y repostería" name="description">
 
-    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -153,75 +152,41 @@
     
     <!-- Portfolio End -->
 
-
-       <!-- Custom Modal -->
-       <div id="customModal" class="custom-modal">
-        <span class="close-x" onclick="closeModal()">&times;</span>
-        <div class="custom-modal-content fade-in">
-            <div class="modal-image-container">
-                <img id="modalImage" class="modal-image" src="" alt="Product Image">
+   <!-- Custom Modal -->
+<div id="customModal" class="custom-modal">
+    <span class="close-x" onclick="closeModal()">&times;</span>
+    <div class="custom-modal-content fade-in">
+        <div class="modal-image-container">
+            <img id="modalImage" class="modal-image" src="" alt="Product Image">
+        </div>
+        <div class="modal-details">
+            <h2 id="modalTitle" class="modal-title">Product Title</h2>
+            <div id="modalDescription" class="modal-description">
+                Product description goes here. This will contain details about the product.
             </div>
-            <div class="modal-details">
-                <h2 id="modalTitle" class="modal-title">Product Title</h2>
-                <div id="modalDescription" class="modal-description">
-                    Product description goes here. This will contain details about the product.
-                </div>
-                <div id="modalSabores" class="modal-sabores">
-                    <h4>Sabores disponibles:</h4>
-                    <ul id="saboresList">
-                    </ul>
-                </div>
-                <div id="modalPrecio" class="modal-precio">
-                    <h4>Precio: $<span id="precioValue">0.00</span></h4>
-                </div>
-                <div id="modalButtons" class="modal-buttons">
-                    
-                </div>
+            <div id="modalSabores" class="modal-sabores">
+                <h4>Selecciona un sabor:</h4>
+                <select id="saborSelect" class="form-control" style="width: 100%; margin-top: 5px;">
+                    <!-- Opciones de sabores se generarán dinámicamente -->
+                </select>
+            </div>   
+            <div id="modalCantidad" class="modal-cantidad" style="margin-top: 10px;">
+                <label for="cantidadInput"><strong>Cantidad:</strong></label>
+                <input type="number" id="cantidadInput" class="form-control"
+                       min="1" max="100" step="1" value="1"
+                       style="width: 100px; padding: 5px; margin-top: 5px;">
+            </div>
+            <div id="modalPrecio" class="modal-precio">
+                <h4>Precio: $<span id="precioValue">0.00</span></h4>
+            </div>
+            <!-- Botones para ordenar o cerrar -->
+            <div id="modalButtons" class="modal-buttons">
+                <button class="btn-order" onclick="orderItem()">Ordenar</button>
+                <button class="btn-close" onclick="closeModal()">Cerrar</button>
             </div>
         </div>
     </div>
-
-    <!-- Custom Modal -->
-    <div id="customModal" class="custom-modal">
-        <span class="close-x" onclick="closeModal()">&times;</span>
-        <div class="custom-modal-content fade-in">
-            <div class="modal-image-container">
-                <img id="modalImage" class="modal-image" src="" alt="Product Image">
-            </div>
-            <div class="modal-details">
-                <h2 id="modalTitle" class="modal-title">Product Title</h2>
-                <div id="modalDescription" class="modal-description">
-                    Product description goes here. This will contain details about the product.
-                </div>
-                <div id="modalSabores" class="modal-sabores">
-                    <h4>Sabores disponibles:</h4>
-                    <ul id="saboresList">
-                    
-                    </ul>
-                </div>
-
-            
-                <div id="modalCantidad" class="modal-cantidad">
-                    <h4>Cantidad:</h4>
-                    <div class="quantity-selector">
-                        <button class="quantity-btn" onclick="decrementQuantity()">-</button>
-                        <input type="number" id="quantityInput" value="1" min="1" max="99">
-                        <button class="quantity-btn" onclick="incrementQuantity()">+</button>
-                    </div>
-                </div>    
-
-                <div id="modalPrecio" class="modal-precio">
-                    <h4>Precio: $<span id="precioValue">0.00</span></h4>
-                </div>
-                
-                </div>
-                <div id="modalButtons" class="modal-buttons">
-                    <button class="btn-order" onclick="orderItem()">Ordenar</button>
-                    <button class="btn-close" onclick="closeModal()">Cerrar</button>
-                </div>
-            </div>
-        </div>
-    </div>
+</div>
 
 
     <!-- Footer Start -->
@@ -284,7 +249,7 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     <script src="js/galeria.js"></script>
-    <script src="js/carrito.js"></script>
+    <script src="js/carrito.js"></script> 
 </body>
 
 </html>

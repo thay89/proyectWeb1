@@ -169,3 +169,38 @@
     opacity: 1;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
 }
+
+
+/**/
+/* Iconos móviles en navbar */
+.mobile-nav-icons {
+  display: none;
+  padding: 10px 15px;
+}
+
+.mobile-nav-icons .nav-link {
+  position: relative;
+  display: inline-block;
+  margin: 0 10px;
+  color: var(--disco);
+}
+
+@media (max-width: 991px) {
+  .mobile-nav-icons {
+      display: flex;
+  }
+  
+  /* Asegura que el contador se vea bien */
+  .mobile-nav-icons .contador-carrito {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background: var(--maroon-flush);
+      color: white;
+      border-radius: 50%;
+      padding: 2px 5px;
+      font-size: 10px;
+  }
+}
+
+/*Modal*/
