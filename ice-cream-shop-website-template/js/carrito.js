@@ -41,22 +41,18 @@ function agregarCarrito(id, categoria) {
     }
 }
 
-// Función para notificación centrada
 function mostrarNotificacionCentrada(mensaje, tipo) {
     const notificacion = document.createElement('div');
     notificacion.className = `notificacion-centrada alert-${tipo}`;
     notificacion.textContent = mensaje;
     document.body.appendChild(notificacion);
     
-
-    /*Modificar*/
     notificacion.style.cssText = `
-    ${tipo === 'warning' ? 
-        'background: #bf2646; border: 2px solid #9c698b;' : 
-        'background: #901956; border: 2px solid #e87bb7;'
-    }
-`;
-
+        ${tipo === 'warning' ? 
+            'background: #bf2646; border: 2px solid #9c698b;' : 
+            'background: #901956; border: 2px solid #e87bb7;'
+        }
+    `;
 
     setTimeout(() => {
         notificacion.classList.add('desvanecer');
@@ -86,10 +82,9 @@ function contador() {
 }
 
 function eliminarProd(id) {
-    // Filtra el carrito, manteniendo los productos con ID diferente
     carrito = carrito.filter(p => p.id !== id);
-    guardarCarrito(); // Guarda los cambios
-    mostrar(); // Actualiza la vista del carrito
+    guardarCarrito();
+    mostrar();
 }
 
 function vaciarCarrito() {
@@ -112,6 +107,7 @@ function mostrar() {
         if (carrito.length === 0) {
             contenedorCarrito.innerHTML = "<p>El carrito está vacío</p>";
             totalElement.textContent = "0.00";
+            contenedorCarrito.classList.remove("scroll-activo");
             return;
         }
         
@@ -124,12 +120,19 @@ function mostrar() {
                 <div class="info-producto">
                     <h3>${item.nombre}</h3>
                     <p>$${item.precio.toFixed(2)}</p>
-                     <button onclick="eliminarProd('${item.id}')" class="btn-eliminar">Eliminar</button>
+                    <button onclick="eliminarProd('${item.id}')" class="btn-eliminar">Eliminar</button>
                 </div>
             `;
             
             contenedorCarrito.appendChild(productoElement);
         });
+        
+        // Activar scroll solo si hay 3 o más productos
+        if (carrito.length >= 3) {
+            contenedorCarrito.classList.add("scroll-activo");
+        } else {
+            contenedorCarrito.classList.remove("scroll-activo");
+        }
         
         if (totalElement) {
             totalElement.textContent = calcularTotal();
@@ -140,15 +143,9 @@ function mostrar() {
 function actualizarContadores() {
     const totalItems = carrito.reduce((total, item) => total + (item.cantidad || 1), 0);
     
-    // Actualizar todos los contadores con el mismo ID
-    const contadores = document.querySelectorAll('#contCarrito');
+    // Actualizar todos los contadores
+    const contadores = document.querySelectorAll('#contCarrito, .contador-carrito');
     contadores.forEach(contador => {
-        contador.textContent = totalItems;
-    });
-    
-    // También actualizar por clase por si acaso
-    const contadoresClase = document.querySelectorAll('.contador-carrito');
-    contadoresClase.forEach(contador => {
         contador.textContent = totalItems;
     });
 }
