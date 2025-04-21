@@ -11,51 +11,40 @@
     --white: #ffffff; /* Blanco */
 }
 
-.fa-check.text-secondary {
-    color: var(--blue-chill) !important; /* Checks en turquesa */
-}
-
 /* Botones primarios y secundarios */
 .btn-primary {
-    background-color: var(--disco) !important; 
+    background-color: var(--disco) !important;
 }
 
 .btn-primary:hover {
-    background-color: var(--maroon-flush) !important; 
+    background-color: var(--maroon-flush) !important;
 }
 
 .btn-secondary {
-    background-color: var(--blue-chill) !important; 
+    background-color: var(--blue-chill) !important;
 }
 
 .btn-secondary:hover {
-    background-color: var(--cape-palliser) !important; 
+    background-color: var(--cape-palliser) !important;
 }
 
 /* Título "Cupcake House" con dos colores */
 .navbar-brand .text-primary {
-    color: var(--disco) !important; 
+    color: var(--disco) !important;
 }
 
 .navbar-brand .text-secondary {
-    color: var(--blue-chill) !important; 
+    color: var(--blue-chill) !important;
 }
 
 .section-title {
-    font-weight: bold !important; 
-    color: var(--buccaneer) !important;
-    margin-top: -100PX;
-}
-
-.team-item h3{
-    font-weight: bold !important; 
+    font-weight: bold !important;
     color: var(--buccaneer) !important;
 }
-
 
 /* Footer */
 .footer {
-    background-color: var(--buccaneer) !important; 
+    background-color: var(--buccaneer) !important;
 }
 
 .footer .text-primary {
@@ -80,15 +69,80 @@
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-    color: var(--maroon-flush) !important; 
+    color: var(--maroon-flush) !important;
 }
 
-/* Botones y contorno de la imagen */
-.team-item .btn-outline-secondary {
-    border-color: var(--blue-chill) !important;
-    color: var(--blue-chill) !important;
+
+#galeria {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center; 
+    margin: 0 auto; 
+    max-width: 1200px;
 }
 
+
+.galeria-item {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    overflow: hidden; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease; 
+}
+
+#galeria img {
+    width: 100%;
+    height: 250px; 
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease; 
+}
+
+
+.galeria-item:hover img {
+    transform: scale(1.1); 
+}
+
+
+@media (min-width: 1024px) {
+    #galeria {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    #galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 767px) {
+    #galeria {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+    #galeria {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+.product-item:hover {
+    background-color: var(--blue-chill) !important;
+    color: var(--white) !important;
+    transition: background-color 0.3s ease;
+}
+
+/* Header */
 .page-header {
     background-image: url(../img/IMG_8804.JPG);
     background-size: cover;
@@ -98,20 +152,64 @@
 
 .texto1 {
     display: flex;
-    justify-content: center;  
-    align-items: center;     
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    width: 100%;             
-    height: 100vh;           
+    width: 100%;
+    height: 100vh;
     margin-top: -250px;
     margin-bottom: -250px;
 }
 
 
-/* Cambiar color de fondo del contenedor del producto*/
-.product-item:hover {
-    background-color: var(--blue-chill) !important; 
-    color: var(--white) !important; 
+
+/* Modal Imagen */
+.modal-imagen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-contenido {
+    position: relative;
+    max-width: 80%; /* Ajusta el porcentaje del contenedor */
+    max-height: 80%; /* Ajusta el porcentaje de la altura */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    overflow: hidden; 
+}
+
+.modal-contenido img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 10px;  
+    right: 10px; 
+    color: white;
+    font-size: 70px; 
+    font-weight: bold; 
+    cursor: pointer;
+    z-index: 10001; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 15px; 
+    border-radius: 50%; 
     transition: background-color 0.3s ease; 
 }
 
+.cerrar-modal:hover {
+    background-color: rgba(0, 0, 0, 0.7); 
+    color: #ff0000;
+}

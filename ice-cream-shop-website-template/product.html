@@ -26,6 +26,7 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/product.css" rel="stylesheet">
     <link href="css/carrito.css" rel="stylesheet">
+    <link href="css/galeria.css" rel="stylesheet">
 </head>
 
 <body>
@@ -99,9 +100,18 @@
                         <h1 class="m-0 display-6 text-primary"><span class="text-secondary">Cupcake</span>House</h1>
                     </a>
                     <div class="navbar-nav mr-auto py-0">
-                        <a href="gallery.html" class="nav-item nav-link">Galeria</a>
-                        <a href="product.html" class="nav-item nav-link">Productos</a>
+                        <a href="gallery.html" class="nav-item nav-link">Productos</a>
+                        <a href="product.html" class="nav-item nav-link">Galeria</a>
                     </div>
+                    <div class="d-lg-none mobile-nav-icons ml-auto">
+                        <a href="#" onclick="abrirModalCarrito()" class="nav-link">
+                         <i class="fas fa-shopping-cart"></i>
+                         <span id="contCarrito" class="contador-carrito">0</span>
+                     </a>
+                         <a href="contact.html" class="nav-link">
+                             <i class="fas fa-envelope"></i>
+                         </a>
+                     </div>
                 </div>
             </nav>
         </div>
@@ -116,7 +126,7 @@
             <div class="d-inline-flex align-items-center text-white">
                 <p class="m-0"><a class="text-white" href="">Home</a></p>
                 <i class="fa fa-circle px-3"></i>
-                <p class="m-0"><a class="text-white" href="">Productos</a></p>
+                <p class="m-0"><a class="text-white" href="">Galeria</a></p>
             </div>
         </div>
     </div>
@@ -132,155 +142,20 @@
                 </div>
 
             </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-6 mb-4 pb-2">
-                    <div class="product-item d-flex flex-column align-items-center text-center bg-light rounded py-5 px-3">
-                        <div class="bg-primary mt-n5 py-3" style="width: 80px;">
-                        </div>
-                        <div class="position-relative bg-primary rounded-circle mt-n3 mb-4 p-3" style="width: 150px; height: 150px;">
-                            <img class="rounded-circle w-100 h-100" src="img/queque.JPG" style="object-fit: cover;">
-                        </div>
-                        <h5 class="font-weight-bold mb-4">Pasteles</h5>
-                        <a href="" class="btn btn-sm btn-secondary">Ordenar ya</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4 pb-2">
-                    <div class="product-item d-flex flex-column align-items-center text-center bg-light rounded py-5 px-3">
-                        <div class="bg-primary mt-n5 py-3" style="width: 80px;">
-                        </div>
-                        <div class="position-relative bg-primary rounded-circle mt-n3 mb-4 p-3" style="width: 150px; height: 150px;">
-                            <img class="rounded-circle w-100 h-100" src="img/pops.JPG" style="object-fit: cover;">
-                        </div>
-                        <h5 class="font-weight-bold mb-4">Cake pops</h5>
-                        <a href="" class="btn btn-sm btn-secondary">Ordenar ya</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4 pb-2">
-                    <div class="product-item d-flex flex-column align-items-center text-center bg-light rounded py-5 px-3">
-                        <div class="bg-primary mt-n5 py-3" style="width: 80px;">
-                        </div>
-                        <div class="position-relative bg-primary rounded-circle mt-n3 mb-4 p-3" style="width: 150px; height: 150px;">
-                            <img class="rounded-circle w-100 h-100" src="img/VasosPtr.JPG" style="object-fit: cover;">
-                        </div>
-                        <h5 class="font-weight-bold mb-4">Vasos de postre</h5>
-                        <a href="" class="btn btn-sm btn-secondary">Ordenar ya</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4 pb-2">
-                    <div class="product-item d-flex flex-column align-items-center text-center bg-light rounded py-5 px-3">
-                        <div class="bg-primary mt-n5 py-3" style="width: 80px;">
-                        </div>
-                        <div class="position-relative bg-primary rounded-circle mt-n3 mb-4 p-3" style="width: 150px; height: 150px;">
-                            <img class="rounded-circle w-100 h-100" src="img/cheesck.jpg" style="object-fit: cover;">
-                        </div>
-                        <h5 class="font-weight-bold mb-4">Cheescakes</h5>
-                        <a href="" class="btn btn-sm btn-secondary">Ordenar ya</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4 pb-2">
-                    <div class="product-item d-flex flex-column align-items-center text-center bg-light rounded py-5 px-3">
-                        <div class="bg-primary mt-n5 py-3" style="width: 80px;">
-                        </div>
-                        <div class="position-relative bg-primary rounded-circle mt-n3 mb-4 p-3" style="width: 150px; height: 150px;">
-                            <img class="rounded-circle w-100 h-100" src="img/Flanes.jpg" style="object-fit: cover;">
-                        </div>
-                        <h5 class="font-weight-bold mb-4">Flanes</h5>
-                        <a href="" class="btn btn-sm btn-secondary">Ordenar ya</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4 pb-2">
-                    <div class="product-item d-flex flex-column align-items-center text-center bg-light rounded py-5 px-3">
-                        <div class="bg-primary mt-n5 py-3" style="width: 80px;">
-                        </div>
-                        <div class="position-relative bg-primary rounded-circle mt-n3 mb-4 p-3" style="width: 150px; height: 150px;">
-                            <img class="rounded-circle w-100 h-100" src="img/donas.JPG" style="object-fit: cover;">
-                        </div>
-                        <h5 class="font-weight-bold mb-4">Donas</h5>
-                        <a href="" class="btn btn-sm btn-secondary">Ordenar ya</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4 pb-2">
-                    <div class="product-item d-flex flex-column align-items-center text-center bg-light rounded py-5 px-3">
-                        <div class="bg-primary mt-n5 py-3" style="width: 80px;">
-                        </div>
-                        <div class="position-relative bg-primary rounded-circle mt-n3 mb-4 p-3" style="width: 150px; height: 150px;">
-                            <img class="rounded-circle w-100 h-100" src="img/cup.jpg" style="object-fit: cover;">
-                        </div>
-                        <h5 class="font-weight-bold mb-4">Cupcakes</h5>
-                        <a href="" class="btn btn-sm btn-secondary">Ordenar ya</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4 pb-2">
-                    <div class="product-item d-flex flex-column align-items-center text-center bg-light rounded py-5 px-3">
-                        <div class="bg-primary mt-n5 py-3" style="width: 80px;">
-                        </div>
-                        <div class="position-relative bg-primary rounded-circle mt-n3 mb-4 p-3" style="width: 150px; height: 150px;">
-                            <img class="rounded-circle w-100 h-100" src="img/product-2.jpg" style="object-fit: cover;">
-                        </div>
-                        <h5 class="font-weight-bold mb-4">Galletas</h5>
-                        <a href="" class="btn btn-sm btn-secondary">Ordenar ya</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4 pb-2">
-                    <div class="product-item d-flex flex-column align-items-center text-center bg-light rounded py-5 px-3">
-                        <div class="bg-primary mt-n5 py-3" style="width: 80px;">
-                        </div>
-                        <div class="position-relative bg-primary rounded-circle mt-n3 mb-4 p-3" style="width: 150px; height: 150px;">
-                            <img class="rounded-circle w-100 h-100" src="img/pies.jpg" style="object-fit: cover;">
-                        </div>
-                        <h5 class="font-weight-bold mb-4">Pies</h5>
-                        <a href="" class="btn btn-sm btn-secondary">Ordenar ya</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4 pb-2">
-                    <div class="product-item d-flex flex-column align-items-center text-center bg-light rounded py-5 px-3">
-                        <div class="bg-primary mt-n5 py-3" style="width: 80px;">
-                        </div>
-                        <div class="position-relative bg-primary rounded-circle mt-n3 mb-4 p-3" style="width: 150px; height: 150px;">
-                            <img class="rounded-circle w-100 h-100" src="img/chilenas.JPG" style="object-fit: cover;">
-                        </div>
-                        <h5 class="font-weight-bold mb-4">Tortas chilenas</h5>
-                        <a href="" class="btn btn-sm btn-secondary">Ordenar ya</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4 pb-2">
-                    <div class="product-item d-flex flex-column align-items-center text-center bg-light rounded py-5 px-3">
-                        <div class="bg-primary mt-n5 py-3" style="width: 80px;">
-                        </div>
-                        <div class="position-relative bg-primary rounded-circle mt-n3 mb-4 p-3" style="width: 150px; height: 150px;">
-                            <img class="rounded-circle w-100 h-100" src="img/Bocadillos.jpg" style="object-fit: cover;">
-                        </div>
-                        <h5 class="font-weight-bold mb-4">Bocadillos</h5>
-                        <a href="" class="btn btn-sm btn-secondary">Ordenar ya</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4 pb-2">
-                    <div class="product-item d-flex flex-column align-items-center text-center bg-light rounded py-5 px-3">
-                        <div class="bg-primary mt-n5 py-3" style="width: 80px;">
-                        </div>
-                        <div class="position-relative bg-primary rounded-circle mt-n3 mb-4 p-3" style="width: 150px; height: 150px;">
-                            <img class="rounded-circle w-100 h-100" src="img/cajas.JPG" style="object-fit: cover;">
-                        </div>
-                        <h5 class="font-weight-bold mb-4">Cajas surtidas</h5>
-                        <a href="" class="btn btn-sm btn-secondary">Ordenar ya</a>
-                    </div>
-                </div>
-
-               <div class="texto1">
-                <div class="row mx-0 m-5">
-                    <div class="col-lg-12 p-0">
-                        <h4 class="font-weight-bold mb-3">¡Pide lo que se te antoje y lo hacemos para ti!</h4>
-                        <h5 class="text-muted mb-3">Nos orgullecemos de siempre innovar y hacer felices a nuestros clientes</h5>
-                    </div>
-                </div>
-               </div>
-
-
-                <div class="col-12 text-center">
-                    <a href="" class="btn btn-primary py-3 px-5">Ver más</a>
-                </div>
-
+            <div id="galeria" class="galeria"></div>
             </div>
+
+                        
+                        <!-- Modal Imagen -->
+            <div id="modal-imagen" class="modal-imagen">
+                <div class="modal-contenido">
+                    <span class="cerrar-modal" onclick="cerrarModal()">&times;</span>
+                    <img id="imagen-modal" src="" alt="Imagen seleccionada">
+                </div>
+            </div>
+
+
+
         </div>
     </div>
     <!-- Products End -->
@@ -323,6 +198,8 @@
                 <div class="col-12">
                     <p class="m-0">&copy; <a href="#">Domain</a>. All Rights Reserved. Designed by <a href="https://htmlcodex.com">HTML Codex</a>
                     </p>
+                    <p class="mb-0">Thaylin Barrueta</p>
+                    <p class="mb-0">Fabricio Sequeira</p>
                 </div>
             </div>
         </div>
@@ -350,6 +227,8 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     <script src="js/carrito.js"></script>
+    <script src="js/producto.js"></script>
+    <script src="js/galeria.js"></script>
 </body>
 
 </html>
