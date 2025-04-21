@@ -25,6 +25,9 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
      <link href="css/about.css" rel="stylesheet">
+     <link href="css/galeria.css" rel="stylesheet">
+     <link href="css/carrito.css" rel="stylesheet">
+     
 </head>
 
 <body>
@@ -36,41 +39,49 @@
                     <div class="d-inline-flex align-items-center">
                         <a class="text-white pr-3" href="">FAQs</a>
                         <span class="text-white">|</span>
+                        <a class="text-white px-3" href="">Help</a>
+                        <span class="text-white">|</span>
+                        <a class="text-white pl-3" href="">Support</a>
                     </div>
                 </div>
                 <div class="col-md-6 text-center text-lg-right">
                     <div class="d-inline-flex align-items-center">
 
                           <!-- Modal del Carrito -->
-                        <div class="carrito-icon" onclick="abrirModalCarrito()">
+                          <div class="carrito-icon" onclick="abrirModalCarrito()">
                             <i class="fas fa-shopping-cart"></i>
-                            <span id="contCarrito">0</span>
-                          </div>
-                          <div id="modal-carrito" class="modal">
-                            <div class="modal-contenido">
-                              <div class="modal-header">
-                                <h2>Tu Carrito</h2>
-                                
-                                <span class="cerrar-modal" onclick="cerrarModalCarrito()">&times;</span>
-                              </div>
-                              <div id="contenedor-carrito"></div>
-                              <div class="total">
-                                <h3>Total: $<span id="carrito-total">0.00</span></h3>
-                              </div>
-                              <div class="modal-footer">
-                                <button onclick="vaciarCarrito()">Vaciar Carrito</button>
-                                <a href="factura.html"><button onclick="">Pagar</button></a>
-                              </div>
-                            </div>
-                          </div>
-                        <a class="text-white px-3" href="carrito.html">
-                            <i class="fas fa-shopping-cart"></i>
-                        </a>
+                            <span id="contCarrito" class="contador-carrito">0</span>
+                        </div>
 
+                        <div id="modal-carrito" class="modal">
+                            <div class="modal-contenido">
+                                <div class="modal-header">
+                                    <h2>Tu Carrito</h2>
+                                    <span class="cerrar-modal" onclick="cerrarModalCarrito()">&times;</span>
+                                </div>
+                                
+                                <div id="contenedor-carrito" class="contenedor-productos">
+                                    <!-- Los productos aparecerán aquí -->
+
+                                </div>
+                                
+                                <div class="total">
+                                    <h3>Total: $<span id="carrito-total">0.00</span></h3>
+                                </div>
+                                
+                                <div class="modal-footer">
+                                    <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+                                    <a href="factura.html"><button>Pagar</button></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        
                         <a class="text-white px-3" href="contact.html">
                             <i class="fas fa-envelope"></i>
                         </a>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -97,9 +108,18 @@
                         <h1 class="m-0 display-6 text-primary"><span class="text-secondary">Cupcake</span>House</h1>
                     </a>
                     <div class="navbar-nav mr-auto py-0">
-                        <a href="gallery.html" class="nav-item nav-link">Galeria</a>
-                        <a href="product.html" class="nav-item nav-link">Productos</a>
+                        <a href="gallery.html" class="nav-item nav-link">Productos</a>
+                        <a href="product.html" class="nav-item nav-link">Galeria</a>
                     </div>
+                    <div class="d-lg-none mobile-nav-icons ml-auto">
+                        <a href="#" onclick="abrirModalCarrito()" class="nav-link">
+                         <i class="fas fa-shopping-cart"></i>
+                         <span id="contCarrito" class="contador-carrito">0</span>
+                     </a>
+                         <a href="contact.html" class="nav-link">
+                             <i class="fas fa-envelope"></i>
+                         </a>
+                     </div>
                 </div>
             </nav>
         </div>
@@ -293,6 +313,8 @@
                 <div class="col-12">
                     <p class="m-0">&copy; <a href="#">Domain</a>. All Rights Reserved. Designed by <a href="https://htmlcodex.com">HTML Codex</a>
                     </p>
+                    <p class="mb-0">Thaylin Barrueta</p>
+                    <p class="mb-0">Fabricio Sequeira</p>
                 </div>
             </div>
         </div>
@@ -319,6 +341,9 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script src="js/galeria.js"></script>
+    <script src="js/carrito.js"></script>
+</body>
 </body>
 
 </html>
