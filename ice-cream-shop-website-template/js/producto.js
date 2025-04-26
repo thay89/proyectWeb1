@@ -28,29 +28,3 @@ function cargarProductos() {
   document.addEventListener('DOMContentLoaded', cargarProductos);
 
   
-
-function abrirModal(imagenSrc) {
-    const modal = document.getElementById('modal-imagen');
-    const imagenModal = document.getElementById('imagen-modal');
-    
-    imagenModal.src = imagenSrc;
-    
-    modal.style.display = 'flex';
-}
-
-function cerrarModal() {
-    const modal = document.getElementById('modal-imagen');
-    modal.style.display = 'none';
-}
-
-// Agregar evento a las imágenes generadas para abrir el modal al hacer clic
-document.addEventListener('DOMContentLoaded', () => {
-    // Asegurarse de que las imágenes estén cargadas correctamente
-    const galeria = document.getElementById('galeria');
-    galeria.addEventListener('click', (event) => {
-        // Verificar si el clic fue en una imagen
-        if (event.target.tagName === 'IMG') {
-            abrirModal(event.target.src);
-        }
-    });
-});
