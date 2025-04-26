@@ -19,26 +19,35 @@ function agregarCarrito(id, categoria) {
     const producto = categoriaObj.items.find(p => p.id === id);
     if (!producto) return;
 
-    const existe = carrito.some(item => item.id === id);
+    // Obtener el sabor seleccionado y la cantidad
+    const saborSelect = document.getElementById('saborSelect');
+    const cantidadInput = document.getElementById('cantidadInput');
+    const sabor = saborSelect ? saborSelect.value : 'Sin sabor especificado';
+    const cantidad = cantidadInput ? parseInt(cantidadInput.value) : 1;
+
+    const existeIndex = carrito.findIndex(item => item.id === id && item.sabor === sabor);
     
     // Mostrar notificación
-    const mensaje = existe 
-        ? 'Este producto ya está en tu carrito' 
-        : `¡${producto.nombre} agregado!`;
-    const tipo = existe ? 'warning' : 'success';
+    const mensaje = existeIndex !== -1 
+        ? `¡Se actualizó la cantidad de ${producto.nombre} (${sabor})!` 
+        : `¡${producto.nombre} (${sabor}) agregado!`;
+    const tipo = existeIndex !== -1 ? 'warning' : 'success';
     
     mostrarNotificacionCentrada(mensaje, tipo);
 
-    if (!existe) {
+    if (existeIndex !== -1) {
+        carrito[existeIndex].cantidad += cantidad;
+    } else {
         carrito.push({
             id: producto.id,
             imagen: producto.imagen,
             nombre: producto.nombre,
             precio: producto.precio,
-            cantidad: 1
+            cantidad: cantidad,
+            sabor: sabor
         });
-        guardarCarrito();
     }
+    guardarCarrito();
 }
 
 function mostrarNotificacionCentrada(mensaje, tipo) {
@@ -81,8 +90,8 @@ function contador() {
     }
 }
 
-function eliminarProd(id) {
-    carrito = carrito.filter(p => p.id !== id);
+function eliminarProd(id, sabor) {
+    carrito = carrito.filter(p => !(p.id === id && p.sabor === sabor));
     guardarCarrito();
     mostrar();
 }
@@ -119,15 +128,17 @@ function mostrar() {
                 <img src="${item.imagen}" alt="${item.nombre}" class="img-carrito">
                 <div class="info-producto">
                     <h3>${item.nombre}</h3>
-                    <p>$${item.precio.toFixed(2)}</p>
-                    <button onclick="eliminarProd('${item.id}')" class="btn-eliminar">Eliminar</button>
+                    <p>Sabor: ${item.sabor || 'No especificado'}</p>
+                    <p>Cantidad: ${item.cantidad}</p>
+                    <p>Precio unitario: $${item.precio.toFixed(2)}</p>
+                    <p>Subtotal: $${(item.precio * item.cantidad).toFixed(2)}</p>
+                    <button onclick="eliminarProd('${item.id}', '${item.sabor}')" class="btn-eliminar">Eliminar</button>
                 </div>
             `;
             
             contenedorCarrito.appendChild(productoElement);
         });
         
-        // Activar scroll solo si hay 3 o más productos
         if (carrito.length >= 3) {
             contenedorCarrito.classList.add("scroll-activo");
         } else {
@@ -135,11 +146,11 @@ function mostrar() {
         }
         
         if (totalElement) {
-            totalElement.textContent = calcularTotal();
+            const total = carrito.reduce((sum, item) => sum + (item.precio * item.cantidad), 0);
+            totalElement.textContent = total.toFixed(2);
         }
     }
 }
-
 function actualizarContadores() {
     const totalItems = carrito.reduce((total, item) => total + (item.cantidad || 1), 0);
     

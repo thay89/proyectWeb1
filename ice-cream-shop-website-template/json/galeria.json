@@ -185,7 +185,7 @@
           {
             "id" : "mesa1",
             "nombre": "Mesa Dulce de Bodas",
-            "imagen": "img/galeria26.jpeg",
+            "imagen": "img/seccion_productos/mesas/mesa1.jpeg",
             "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
             "sabores": ["Chocolate", "Frutas", "Crema"],
             "precio": 100.0
@@ -193,7 +193,7 @@
           {
             "id" : "mesa2",
             "nombre": "Mesa Dulce de Bodas",
-            "imagen": "img/galeria14.jpeg",
+            "imagen": "img/seccion_productos/mesas/mesa2.jpeg",
             "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
             "sabores": ["Chocolate", "Frutas", "Crema"],
             "precio": 100.0
@@ -201,7 +201,7 @@
           {
             "id" : "mesa3",
             "nombre": "Mesa Dulce de Bodas",
-            "imagen": "img/galeria15.jpeg",
+            "imagen": "img/seccion_productos/mesas/mesa3.jpeg",
             "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
             "sabores": ["Chocolate", "Frutas", "Crema"],
             "precio": 100.0
@@ -209,7 +209,7 @@
           {
             "id" : "mesa4",
             "nombre": "Mesa Dulce de Bodas",
-            "imagen": "img/galeria19.jpeg",
+            "imagen": "img/seccion_productos/mesas/mesa4.jpeg",
             "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
             "sabores": ["Chocolate", "Frutas", "Crema"],
             "precio": 100.0
@@ -217,15 +217,7 @@
           {
             "id" : "mesa5",
             "nombre": "Mesa Dulce de Bodas",
-            "imagen": "img/galeria24.jpeg",
-            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
-            "sabores": ["Chocolate", "Frutas", "Crema"],
-            "precio": 100.0
-          },
-          {
-            "id" : "mesa6",
-            "nombre": "Mesa Dulce de Bodas",
-            "imagen": "img/galeria18.jpeg",
+           "imagen": "img/seccion_productos/mesas/mesa5.jpeg",
             "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
             "sabores": ["Chocolate", "Frutas", "Crema"],
             "precio": 100.0
@@ -335,62 +327,6 @@
             "id" : "otro13",
             "nombre": "Mesa Dulce de Bodas",
             "imagen": "img/seccion_productos/otros/otro13.jpeg",
-            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
-            "sabores": ["Chocolate", "Frutas", "Crema"],
-            "precio": 100.0
-          },
-          {
-            "id" : "otro14",
-            "nombre": "Mesa Dulce de Bodas",
-            "imagen": "img/seccion_productos/otros/otro14.jpeg",
-            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
-            "sabores": ["Chocolate", "Frutas", "Crema"],
-            "precio": 100.0
-          },
-          {
-            "id" : "otro15",
-            "nombre": "Mesa Dulce de Bodas",
-            "imagen": "img/seccion_productos/otros/otro15.jpeg",
-            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
-            "sabores": ["Chocolate", "Frutas", "Crema"],
-            "precio": 100.0
-          },
-          {
-            "id" : "otro16",
-            "nombre": "Mesa Dulce de Bodas",
-            "imagen": "img/seccion_productos/otros/otro16.jpeg",
-            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
-            "sabores": ["Chocolate", "Frutas", "Crema"],
-            "precio": 100.0
-          },
-          {
-            "id" : "otro17",
-            "nombre": "Mesa Dulce de Bodas",
-            "imagen": "img/seccion_productos/otros/otro17.jpeg",
-            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
-            "sabores": ["Chocolate", "Frutas", "Crema"],
-            "precio": 100.0
-          },
-          {
-            "id" : "otro18",
-            "nombre": "Mesa Dulce de Bodas",
-            "imagen": "img/seccion_productos/otros/otro18.jpeg",
-            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
-            "sabores": ["Chocolate", "Frutas", "Crema"],
-            "precio": 100.0
-          },
-          {
-            "id" : "otro19",
-            "nombre": "Mesa Dulce de Bodas",
-            "imagen": "img/seccion_productos/otros/otro19.jpeg",
-            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
-            "sabores": ["Chocolate", "Frutas", "Crema"],
-            "precio": 100.0
-          },
-          {
-            "id" : "otro20",
-            "nombre": "Mesa Dulce de Bodas",
-            "imagen": "img/seccion_productos/otros/otro20.jpeg",
             "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
             "sabores": ["Chocolate", "Frutas", "Crema"],
             "precio": 100.0

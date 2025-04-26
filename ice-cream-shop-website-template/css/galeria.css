@@ -1,37 +1,42 @@
-
-/* Updated CSS */
+/* Estilos base para portfolio */
 .portfolio-item {
-    padding: 10px; /* Padding inside each item for spacing */
+    padding: 10px;
+    margin-bottom: 30px;
 }
 
 .portfolio-item img {
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s;
-    width: 100%; /* Make sure image fills its container */
+    transition: transform 0.3s ease;
+    width: 100%;
 }
 
 .portfolio-item img:hover {
     transform: scale(1.05);
 }
 
-/* Add this to create proper spacing */
 .portfolio-container {
-    margin: 0 -10px; /* Negative margin to counter the padding */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 -10px;
+    height: auto;
 }
 
-/* Add this to your css/galeria.css file */
-
-.portfolio-item {
-    margin-bottom: 30px;
+.portfolio-container img {
+    height: 300px;
+    width: 300px;
+    object-fit: contain;
+    margin: 10px;
 }
 
+/* Efecto hover para portfolio items */
 .portfolio-item .position-relative {
     transition: all 0.3s ease;
     overflow: hidden;
 }
 
-/* Remove the existing plus icon hover effect */
+/* Botón de portfolio y efectos */
 .portfolio-btn {
     position: absolute;
     width: 100%;
@@ -41,25 +46,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(128, 128, 128, 0.5); /* Gris transparente */
+    background: rgba(128, 128, 128, 0.5);
     opacity: 0;
     transition: all 0.5s ease;
 }
 
-/* Create a more subtle hover effect */
 .portfolio-item:hover .portfolio-btn {
     opacity: 1;
 }
 
-.portfolio-item:hover img {
-    transform: scale(1.05);
-    transition: transform 0.5s ease;
-}
-
-/* Replace the large plus icon with a more subtle zoom indicator */
 .portfolio-btn i.fa-plus {
     font-size: 24px !important;
-    background: rgba(128, 128, 128, 0.5); /* Gris transparente */
+    background: rgba(128, 128, 128, 0.5);
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -67,109 +65,10 @@
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    color: white; /* Color del icono */
-}
-
-.portfolio-btn:hover i.fa-plus {
-    background: rgba(128, 128, 128, 0.5); /* Gris transparente */
-}
-
-.custom-modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.8);
-}
-
-
-.modal-image-container {
-    flex: 1;
-    max-width: 60%;
-}
-
-.modal-image {
-    width: 100%;
-    height: 100%;
-   
-}
-
-.modal-details {
-    margin-top: 75px;
-    padding: 20px 25px; 
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-title {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    color: #333;
-}
-
-.modal-description {
-    flex-grow: 1;
-    margin-bottom: 20px;
-    color: #666;
-    line-height: 1.6;
-}
-
-
-.btn-order {
-    background-color: #F195B2; /* Primary color from your theme */
     color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: 500;
 }
 
-.btn-close {
-    background-color: #6B6B6B; /* Secondary color */
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: 500;
-}
-
-.btn-order:hover {
-    background-color: #e07a9b;
-}
-
-.btn-close:hover {
-    background-color: #555555;
-}
-
-/* Animation for the modal */
-@keyframes fadeIn {
-    from {opacity: 0}
-    to {opacity: 1}
-}
-
-.fade-in {
-    animation: fadeIn 0.3s;
-}
-
-/* Close button at the top right */
-.close-x {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    font-size: 28px;
-    color: #fff;
-    cursor: pointer;
-    z-index: 1060;
-}
-
+/* Modal principal */
 .custom-modal {
     display: none;
     position: fixed;
@@ -195,13 +94,7 @@
     position: relative;
 }
 
-@media (min-width: 768px) {
-    .custom-modal-content {
-        flex-direction: row;
-        max-height: 90vh;
-    }
-}
-
+/* Botón de cierre del modal */
 .close-x {
     position: absolute;
     top: 15px;
@@ -216,18 +109,11 @@
     color: #ff9bac;
 }
 
+/* Contenedor de imagen en el modal */
 .modal-image-container {
     width: 100%;
     max-height: 300px;
     overflow: hidden;
-}
-
-@media (min-width: 768px) {
-    .modal-image-container {
-        width: 50%;
-        max-height: none;
-        height: auto;
-    }
 }
 
 .modal-image {
@@ -237,17 +123,11 @@
     display: block;
 }
 
+/* Detalles del producto en el modal */
 .modal-details {
     padding: 25px;
     width: 100%;
     overflow-y: auto;
-}
-
-@media (min-width: 768px) {
-    .modal-details {
-        width: 50%;
-        max-height: 90vh;
-    }
 }
 
 .modal-title {
@@ -258,23 +138,22 @@
 }
 
 .modal-description {
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
     line-height: 1.6;
 }
 
-
+/* Estilos para sabores y precio */
 .modal-sabores h4, .modal-precio h4 {
-    margin-top: 0; /* Eliminar margen superior si existe */
+    margin-top: 0;
     color: #f195b2;
     margin-bottom: 10px;
-    font-size: 1.1rem;;
-    
+    font-size: 1.1rem;
 }
 
 .modal-sabores ul {
     list-style: none;
     padding-left: 0;
-    margin-bottom: 15px; /* Reducir de 20px a 15px */
+    margin-bottom: 15px;
 }
 
 .modal-sabores ul li {
@@ -288,6 +167,7 @@
     font-size: 0.9rem;
 }
 
+/* Selector de cantidad */
 .modal-cantidad {
     margin-bottom: 15px;
 }
@@ -335,24 +215,22 @@
     margin-bottom: 25px;
 }
 
+/* Botones del modal */
 .modal-buttons {
     display: flex;
     gap: 10px;
     margin-top: 20px;
-    position: static; /* Position absolutely */
-    bottom: 20px; /* Distance from bottom */
-    left: 20px; /* Distance from left */
 }
 
 .btn-order, .btn-close {
-    padding: 8px 15px;
+    padding: 10px 20px;
     border: none;
-    border-radius: 50px;
+    border-radius: 5px;
     cursor: pointer;
     font-weight: 500;
     transition: all 0.3s ease;
     font-size: 14px;
-    width: 100px; /* Set a fixed width */
+    width: 100px;
 }
 
 .btn-order {
@@ -361,7 +239,7 @@
 }
 
 .btn-order:hover {
-    background-color: #e27399;
+    background-color: #e07c9a;
 }
 
 .btn-close {
@@ -373,6 +251,7 @@
     background-color: #c0c0c0;
 }
 
+/* Animaciones */
 .fade-in {
     animation: fadeIn 0.3s ease-in-out;
 }
@@ -382,24 +261,152 @@
     to { opacity: 1; transform: translateY(0); }
 }
 
-
-.portfolio-container img {
-    height: 300px; /* Ajusta la altura según sea necesario */
-    width: 300px;
-    object-fit: contain; /* Asegura que la imagen no se recorte */
-    margin: 10px; /* Espaciado entre imágenes */
+/* Estilos para selector e inputs */
+#saborSelect {
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 0 10px;
+    background-color: #fff;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
-.portfolio-container {
+
+#saborSelect:focus {
+    outline: none;
+    border-color: #F195B2;
+    box-shadow: 0 0 5px rgba(241, 149, 178, 0.5);
+}
+
+#cantidadInput {
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+#cantidadInput:focus {
+    outline: none;
+    border-color: #F195B2;
+    box-shadow: 0 0 5px rgba(241, 149, 178, 0.5);
+}
+
+/* Asegurar estructura base del sitio */
+html, body {
+    min-height: 100%;
+    position: relative;
+}
+
+body {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    height: auto; /* Changed from 300px */
-    height: 300px;
-    height: auto;
-    margin-bottom: 0; /* Remove this if you added it earlier */
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-@media (max-width: 767px) {
+.container-fluid.py-5.px-0 {
+    flex: 1;
+}
+
+#product-gallery {
+    min-height: 400px;
+    position: relative;
+    z-index: 1;
+}
+
+.footer {
+    position: relative;
+    width: 100%;
+    z-index: 0;
+    margin-top: auto;
+}
+
+/* Estilos para la barra de búsqueda */
+.search-container {
+    margin-bottom: 20px;
+}
+
+.search-container .input-group {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.search-container input {
+    border: 1px solid #f9cad7;
+    padding-left: 15px;
+    height: 42px;
+    font-size: 14px;
+    border-radius: 25px 0 0 25px;
+}
+
+.search-container input:focus {
+    box-shadow: none;
+    border-color: #f195b2;
+}
+
+.search-container .btn-primary {
+    background-color: #f195b2;
+    border-color: #f195b2;
+    border-radius: 0 25px 25px 0;
+    padding: 0 20px;
+}
+
+.search-container .btn-primary:hover {
+    background-color: #e07c9a;
+    border-color: #e07c9a;
+}
+
+/* Estilo para los resultados no encontrados */
+.no-results {
+    text-align: center;
+    width: 100%;
+    padding: 30px;
+    font-size: 18px;
+    color: #999;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+/* Resaltar texto de búsqueda */
+.highlight {
+    background-color: #fff3cd;
+    padding: 0 3px;
+    border-radius: 3px;
+}
+
+/* Media queries */
+@media (min-width: 768px) {
+    .custom-modal-content {
+        flex-direction: row;
+        max-height: 90vh;
+    }
+
+    .modal-image-container {
+        width: 50%;
+        max-height: none;
+        height: auto;
+    }
+
+    .modal-details {
+        width: 50%;
+        max-height: 90vh;
+    }
+}
+
+@media (max-width: 768px) {
+    #product-gallery {
+        min-height: 300px;
+    }
+    
+    .container-fluid.py-5.px-0 {
+        margin-bottom: 20px;
+    }
+
     .custom-modal-content {
         flex-direction: column;
         align-items: center;
@@ -438,126 +445,9 @@
         margin-top: 0;
     }
     
-    /* Asegurar que el botón de cerrar esté visible */
     .close-x {
         top: 10px;
         right: 15px;
-        font-size: 30px; /* Hacer más grande el botón de cerrar */
+        font-size: 30px;
     }
 }
-
-/* Estilo para el selector de sabores */
-#saborSelect {
-    height: 40px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    padding: 0 10px;
-    background-color: #fff;
-    font-size: 15px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-#saborSelect:focus {
-    outline: none;
-    border-color: #F195B2; /* Color primario de tu tema */
-    box-shadow: 0 0 5px rgba(241, 149, 178, 0.5);
-}
-
-/* Mejorar el aspecto del input de cantidad */
-#cantidadInput {
-    height: 40px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    text-align: center;
-    font-size: 16px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-#cantidadInput:focus {
-    outline: none;
-    border-color: #F195B2; /* Color primario de tu tema */
-    box-shadow: 0 0 5px rgba(241, 149, 178, 0.5);
-}
-
-/* Ajustes para los botones */
-.modal-buttons {
-    margin-top: 20px;
-    display: flex;
-    gap: 10px;
-}
-
-.btn-order, .btn-close {
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.btn-order {
-    background-color: #F195B2; /* Color primario */
-    color: white;
-}
-
-.btn-order:hover {
-    background-color: #e07c9a; /* Versión más oscura */
-}
-
-.btn-close {
-    background-color: #f0f0f0;
-    color: #333;
-}
-
-.btn-close:hover {
-    background-color: #e0e0e0;
-}
-
-
-
-/* Asegura que el body tenga un mínimo de altura de la ventana completa */
-html, body {
-    min-height: 100%;
-    position: relative;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* viewport height */
-}
-
-/* El contenedor principal debe crecer para ocupar el espacio disponible */
-.container-fluid.py-5.px-0 {
-    flex: 1;
-}
-
-/* Asegúrate de que la galería tenga una altura mínima para evitar superposiciones */
-#product-gallery {
-    min-height: 400px;
-    position: relative;
-    z-index: 1;
-}
-
-/* Footer siempre al final */
-.footer {
-    position: relative;
-    width: 100%;
-    z-index: 0;
-    margin-top: auto;
-}
-
-/* Estilos adicionales para pantallas pequeñas */
-@media (max-width: 768px) {
-    #product-gallery {
-        min-height: 300px;
-    }
-    
-    /* Asegúrate de que haya espacio suficiente antes del footer */
-    .container-fluid.py-5.px-0 {
-        margin-bottom: 20px;
-    }
-}
-

@@ -152,6 +152,19 @@
                     
                 </div>
             </div>
+
+            <div class="col-12 text-center mb-4">
+                <div class="search-container d-flex justify-content-center">
+                    <div class="input-group" style="max-width: 400px;">
+                        <input type="text" id="searchInput" class="form-control" placeholder="Buscar productos...">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="button" id="searchButton">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
     
             <div class="row portfolio-container clearfix" id="product-gallery">
                 <!-- Aquí se cargarán los productos dinámicamente con JS -->
@@ -163,15 +176,15 @@
 
    <!-- Custom Modal -->
 <div id="customModal" class="custom-modal">
-    <span class="close-x" onclick="closeModal()">&times;</span>
+    <span class="close-x" onclick="cerrarModal()">&times;</span>
     <div class="custom-modal-content fade-in">
         <div class="modal-image-container">
             <img id="modalImage" class="modal-image" src="" alt="Product Image">
         </div>
         <div class="modal-details">
-            <h2 id="modalTitle" class="modal-title">Product Title</h2>
+            <h2 id="modalTitle" class="modal-title">Titulo del producto</h2>
             <div id="modalDescription" class="modal-description">
-                Product description goes here. This will contain details about the product.
+                
             </div>
             <div id="modalSabores" class="modal-sabores">
                 <h4>Selecciona un sabor:</h4>
@@ -191,7 +204,7 @@
             <!-- Botones para ordenar o cerrar -->
             <div id="modalButtons" class="modal-buttons">
                 <button class="btn-order" onclick="orderItem()">Ordenar</button>
-                <button class="btn-close" onclick="closeModal()">Cerrar</button>
+                <button class="btn-close" onclick="cerrarModal()">Cerrar</button>
             </div>
         </div>
     </div>
