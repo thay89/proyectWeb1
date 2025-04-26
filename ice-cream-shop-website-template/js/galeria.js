@@ -195,18 +195,34 @@ function abrirModal(id, categoria) {
     document.getElementById('modalImage').src = producto.imagen;
     document.getElementById('modalDescription').textContent = producto.descripcion;
     
-    // Crear selector de sabores
-    configurarSelectorSabores(producto);
+    // Configurar selector de sabores
+    const saboresContainer = document.getElementById('modalSabores');
+    saboresContainer.innerHTML = '<h4>Selecciona un sabor:</h4>';
+    
+    const saborSelect = document.createElement('select');
+    saborSelect.id = 'saborSelect';
+    saborSelect.className = 'form-control';
+    saborSelect.style = 'width: 100%; margin-top: 5px;';
+    
+    producto.sabores.forEach(sabor => {
+        const option = document.createElement('option');
+        option.value = sabor;
+        option.textContent = sabor;
+        saborSelect.appendChild(option);
+    });
+    
+    saboresContainer.appendChild(saborSelect);
     
     // Configurar cantidad
-    configurarCantidad();
+    const cantidadInput = document.getElementById('cantidadInput');
+    cantidadInput.value = 1;
     
     // Mostrar precio y botones
     document.getElementById('precioValue').textContent = producto.precio.toFixed(2);
     document.getElementById('customModal').style.display = 'flex';
     document.getElementById("modalButtons").innerHTML = `
-        <button id="btn-order" class="btn-order" onclick="agregarCarrito('${producto.id}','${categoria}')" >Ordenar</button>
-        <button class="btn-close" onclick="cerrarModal()">Cerrar</button>
+        <button id="btn-order" class="btn-order" onclick="agregarCarrito('${producto.id}','${categoria}')">Ordenar</button>
+        <button class="btn-close" onclick="closeModal()">Cerrar</button>
     `;
 }
 
@@ -267,11 +283,14 @@ function configurarCantidad() {
 }
 
 // Cerrar modal
+// Reemplaza la función existente con esto:
 function cerrarModal() {
     document.getElementById('customModal').style.display = 'none';
 }
+// Asegura disponibilidad global con ambos nombres
+window.cerrarModal = cerrarModal;
+window.closeModal = cerrarModal; // Para compatibilidad con el HTML existente
 
-// Agregar producto al carrito
 function agregarCarrito() {
     if (!saborSeleccionado || cantidadSeleccionada < 1) {
         alert('Por favor selecciona un sabor y una cantidad válida');

@@ -36,7 +36,6 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-    <link href="css/galeria.css" rel="stylesheet">
     <link href="css/carrito.css" rel="stylesheet">
 </head>
 
@@ -58,27 +57,28 @@
                     <div class="d-inline-flex align-items-center">
 
                               <!-- Modal del Carrito -->
-                        <div class="carrito-icon" onclick="abrirModalCarrito()">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span id="contCarrito">0</span>
-                          </div>
-                          <div id="modal-carrito" class="modal">
-                            <div class="modal-contenido">
-                              <div class="modal-header">
-                                <h2>Tu Carrito</h2>
-                                <span class="cerrar-modal" onclick="cerrarModalCarrito()">&times;</span>
+                              <div class="carrito-icon" onclick="abrirModalCarrito()">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span id="contCarrito">0</span>
                               </div>
-                              <div id="contenedor-carrito"></div>
-                              <div class="total">
-                                <h3>Total: $<span id="carrito-total">0.00</span></h3>
+                              <div id="modal-carrito" class="modal">
+                                <div class="modal-contenido">
+                                  <div class="modal-header">
+                                    <h2>Tu Carrito</h2>
+                                    
+                                    <span class="cerrar-modal" onclick="cerrarModalCarrito()">&times;</span>
+                                  </div>
+                                  <div id="contenedor-carrito"></div>
+                                  <div class="total">
+                                    <h3>Total: $<span id="carrito-total">0.00</span></h3>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+                                    <a href="factura.html"><button onclick="pagar()">Pagar</button></a>
+                                  </div>
+                                </div>
                               </div>
-                              <div class="modal-footer">
-                                <button onclick="vaciarCarrito()">Vaciar Carrito</button>
-                                <button onclick="">Pagar</button>
-                              </div>
-                            </div>
-                          </div>
-
+    
 
                         <a class="text-white px-3" href="contact.html">
                             <i class="fas fa-envelope"></i>
@@ -154,24 +154,24 @@
                         <form name="sentMessage" id="contactForm" novalidate="novalidate">
                             <div class="form-row">
                                 <div class="col-sm-6 control-group">
-                                    <input type="text" class="form-control p-4" id="name" placeholder="Nombre" required="required" data-validation-required-message="Please enter your name" />
+                                    <input type="text" class="form-control p-4" id="name" placeholder="Nombre" required="required" data-validation-required-message="Por favor ingrese su nombre" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="col-sm-6 control-group">
-                                    <input type="email" class="form-control p-4" id="email" placeholder="Email" required="required" data-validation-required-message="Please enter your email" />
+                                    <input type="email" class="form-control p-4" id="email" placeholder="Email" required="required" data-validation-required-message="Por favor ingrese su correo" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="control-group">
-                                <input type="text" class="form-control p-4" id="subject" placeholder="Tema" required="required" data-validation-required-message="Please enter a subject" />
+                                <input type="text" class="form-control p-4" id="subject" placeholder="Tema" required="required" data-validation-required-message="Por favor ingrese el tema" />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
-                                <textarea class="form-control p-4" rows="6" id="message" placeholder="Mensaje" required="required" data-validation-required-message="Please enter your message"></textarea>
+                                <textarea class="form-control p-4" rows="6" id="message" placeholder="Mensaje" required="required" data-validation-required-message="Por favor ingrese la descripcion"></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div>
-                                <button class="btn btn-primary btn-block py-3 px-5" type="button" onclick="sendEmail()">Send Message</button>
+                                <button class="btn btn-primary btn-block py-3 px-5" type="button" onclick="sendEmail()">Enviar correo</button>
                             </div>
                         </form>
                     </div>
@@ -257,8 +257,8 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     <script src="js/contact.js"></script>
-    <script src="js/carrito.js"></script>
     <script src="js/galeria.js"></script>
+    <script src="js/carrito.js"></script>
 </body>
 
 </html>
