@@ -395,6 +395,77 @@ body {
     margin-top: 15px;
 }
 
+/* Estilos para validación de errores */
+.error {
+    border: 1px solid #ff4d4d !important;
+    background-color: #fff0f0;
+}
+
+.error-message {
+    color: #ff4d4d;
+    font-size: 12px;
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
+
+/* Estilos para la tarjeta al mostrar error */
+.credit-card-form input.error + .error-message {
+    display: block;
+    margin-top: 2px;
+}
+
+.confirmacion-factura {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.mensaje-contenido {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 500px;
+    width: 80%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.icono-exito {
+    background-color: #4CAF50;
+    color: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    margin: 0 auto 20px;
+}
+
+.mensaje-contenido h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.mensaje-contenido p {
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.desvanecer {
+    opacity: 0;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .invoice-header, .info-section {
