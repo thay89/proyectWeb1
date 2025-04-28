@@ -224,7 +224,7 @@ function enviarFacturaPorCorreo(nombreCliente, correoCliente) {
     
     // Enviar el correo electrónico usando EmailJS
     // Reemplaza 'YOUR_SERVICE_ID' y 'YOUR_TEMPLATE_ID' con tus IDs de EmailJS
-    emailjs.send('service_mowfvlm', 'template_p7bdz2e', templateParams)
+    emailjs.send('service_at7tr4q', 'template_p7bdz2e', templateParams)
         .then(function(response) {
             console.log('Correo enviado exitosamente!', response.status, response.text);
         }, function(error) {
