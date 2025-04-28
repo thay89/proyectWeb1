@@ -332,6 +332,51 @@
             "precio": 100.0
           }
         ]
+      },
+      {
+        "categoria": "Combos",
+        "items": [
+          {
+            "id" : "combo1",
+            "nombre": "Mesa Dulce de Bodas",
+            "imagen": "img/seccion_productos/combos/combo1.jpeg",
+            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
+            "sabores": ["Chocolate", "Frutas", "Crema"],
+            "precio": 100.0
+          },
+          {
+            "id" : "combo2",
+            "nombre": "Cupcakes",
+           "imagen": "img/seccion_productos/combos/combo2.jpeg",
+            "descripcion": "Cupcakes Personalizados!!!.",
+            "sabores": ["Vainilla", "Frutas", "Crema"],
+            "precio": 100.0
+          },
+          {
+            "id" : "combo3",
+            "nombre": "Mesa Dulce de Bodas",
+            "imagen": "img/seccion_productos/combos/combo3.jpeg",
+            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
+            "sabores": ["Chocolate", "Frutas", "Crema"],
+            "precio": 100.0
+          },
+          {
+            "id" : "combo4",
+            "nombre": "Mesa Dulce de Bodas",
+            "imagen": "img/seccion_productos/combos/combo4.jpeg",
+            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
+            "sabores": ["Chocolate", "Frutas", "Crema"],
+            "precio": 100.0
+          },
+          {
+            "id" : "combo5",
+            "nombre": "Mesa Dulce de Bodas",
+            "imagen": "img/seccion_productos/combos/combo5.jpg",
+            "descripcion": "Mesa dulce elegante con variedad de postres para bodas.",
+            "sabores": ["Chocolate", "Frutas", "Crema"],
+            "precio": 100.0
+          }
+        ]
       }
     ]
   }
