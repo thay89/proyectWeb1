@@ -139,7 +139,7 @@ function mostrar() {
             contenedorCarrito.appendChild(productoElement);
         });
         
-        if (carrito.length >= 3) {
+        if (carrito.length >= 2) {
             contenedorCarrito.classList.add("scroll-activo");
         } else {
             contenedorCarrito.classList.remove("scroll-activo");
@@ -161,6 +161,14 @@ function actualizarContadores() {
     });
 }
 
+// Al final del archivo, reemplaza el evento DOMContentLoaded con esto:
 document.addEventListener('DOMContentLoaded', function() {
     cargarCarrito();
+    
+    // Verifica si estamos en la página de carrito.html
+    if (window.location.pathname.includes('carrito.html')) {
+        mostrar(); // Muestra el contenido inmediatamente
+    }
+    
+    actualizarContadores();
 });

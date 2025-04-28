@@ -1,14 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="utf-8">
-    <title>Cupcake House - Galería de Productos</title>
+    <title>Cupcake House - Pedidos de Compras</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Panadería, Repostería, Pastelería" name="keywords">
-    <meta content="Deliciosos productos de pastelería y repostería" name="description">
-
-
+    
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
@@ -27,12 +23,11 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/galeria.css" rel="stylesheet">
     <link href="css/carrito.css" rel="stylesheet">
-   
-</head>
 
+</head>
 <body>
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-primary py-3 d-none d-md-block">
+      <!-- Topbar Start -->
+      <div class="container-fluid bg-primary py-3 d-none d-md-block">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
@@ -46,30 +41,6 @@
                 </div>
                 <div class="col-md-6 text-center text-lg-right">
                     <div class="d-inline-flex align-items-center">
-
-                          <!-- Modal del Carrito -->
-                        <div class="carrito-icon" onclick="abrirModalCarrito()">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span id="contCarrito">0</span>
-                          </div>
-                          <div id="modal-carrito" class="modal">
-                            <div class="modal-contenido">
-                              <div class="modal-header">
-                                <h2>Tu Carrito</h2>
-                                
-                                <span class="cerrar-modal" onclick="cerrarModalCarrito()">&times;</span>
-                              </div>
-                              <div id="contenedor-carrito"></div>
-                              <div class="total">
-                                <h3>Total: $<span id="carrito-total">0.00</span></h3>
-                              </div>
-                              <div class="modal-footer">
-                                <button onclick="vaciarCarrito()">Vaciar Carrito</button>
-                                <a href="factura.html"><button onclick="">Pagar</button></a>
-                              </div>
-                            </div>
-                          </div>
-
                         <a class="text-white px-3" href="contact.html">
                             <i class="fas fa-envelope"></i>
                         </a>
@@ -78,10 +49,9 @@
             </div>
         </div>
     </div>
-    <!-- Topbar End -->
 
     <!-- Navbar Start -->
-     <div class="container-fluid position-relative nav-bar p-0">
+    <div class="container-fluid position-relative nav-bar p-0">
         <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
             <nav class="navbar navbar-expand-lg bg-white navbar-light shadow p-lg-0">
                 <a href="index.html" class="navbar-brand d-block d-lg-none">
@@ -99,18 +69,9 @@
                         <h1 class="m-0 display-6 text-primary"><span class="text-secondary">Cupcake</span>House</h1>
                     </a>
                     <div class="navbar-nav mr-auto py-0">
-                        <a href="gallery.html" class="nav-item nav-link active">Productos</a>
+                        <a href="gallery.html" class="nav-item nav-link">Productos</a>
                         <a href="product.html" class="nav-item nav-link">Galeria</a>
                     </div>
-                    <div class="d-lg-none mobile-nav-icons ml-auto">
-                        <a href="carrito.html" class="nav-item nav-link">
-                         <i class="fas fa-shopping-cart"></i>
-                         <span id="contCarrito" class="contador-carrito">0</span>
-                     </a>
-                         <a href="contact.html" class="nav-link">
-                             <i class="fas fa-envelope"></i>
-                         </a>
-                     </div>
                 </div>
             </nav>
         </div>
@@ -120,97 +81,37 @@
     <!-- Header Start -->
     <div class="jumbotron jumbotron-fluid page-header" style="margin-bottom: 5px;">
         <div class="container text-center py-5">
-            <h1 class="text-white display-3 mt-lg-5">Galería</h1>
+            <h1 class="text-white display-3 mt-lg-5">Pedidos</h1>
             <div class="d-inline-flex align-items-center text-white">
                 <p class="m-0"><a class="text-white" href="index.html">Home</a></p>
                 <i class="fa fa-circle px-3"></i>
-                <p class="m-0">Productos</p>
+                <p class="m-0">Pedidos</p>
             </div>
         </div>
     </div>
     <!-- Header End -->
 
-    <!-- Portfolio Start -->
-    <div class="container-fluid py-5 px-0" style="margin-bottom: 0;">
-        <div class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-5">
-                    <h1 class="section-title position-relative text-center mb-5">
-                        Observa los detalles y diferentes sabores de todas nuestras creaciones
-                    </h1>
+    <!-- Carrito Content Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="responsive-cart-container">
+                <div class="responsive-cart-header">
+                    <h2><i class="fas fa-shopping-cart"></i> Tus pedidos</h2>
+                    <span id="contCarrito" class="contador-carrito">0</span>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-12 text-center">
-                    <ul class="list-inline mb-4 pb-2" id="portfolio-flters">
-                        <li class="btn btn-sm btn-outline-primary m-1 active" data-filter="*">Todos</li>
-                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".Pasteleria">Pastelería</li>
-                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".Reposteria">Repostería</li>
-                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".Mesas-Dulces">Mesas Dulces</li>
-                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".Otros">Otros</li>
-                    </ul>
-                    
-                </div>
-            </div>
-
-            <div class="col-12 text-center mb-4">
-                <div class="search-container d-flex justify-content-center">
-                    <div class="input-group" style="max-width: 400px;">
-                        <input type="text" id="searchInput" class="form-control" placeholder="Buscar productos...">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="button" id="searchButton">
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="row portfolio-container clearfix" id="product-gallery">
-                <!-- Aquí se cargarán los productos dinámicamente con JS -->
-            </div>
-        </div>
-    </div>
-    
-    <!-- Portfolio End -->
-
-   <!-- Custom Modal -->
-<div id="customModal" class="custom-modal">
-    <span class="close-x" onclick="cerrarModal()">&times;</span>
-    <div class="custom-modal-content fade-in">
-        <div class="modal-image-container">
-            <img id="modalImage" class="modal-image" src="" alt="Product Image">
-        </div>
-        <div class="modal-details">
-            <h2 id="modalTitle" class="modal-title">Titulo del producto</h2>
-            <div id="modalDescription" class="modal-description">
                 
+                <div id="contenedor-carrito" class="responsive-cart-items">
+                      <div class="responsive-cart-total">
+                        <h3>Total: $<span id="carrito-total">0.00</span></h3>
+                    </div>
             </div>
-            <div id="modalSabores" class="modal-sabores">
-                <h4>Selecciona un sabor:</h4>
-                <select id="saborSelect" class="form-control" style="width: 100%; margin-top: 5px;">
-                    <!-- Opciones de sabores se generarán dinámicamente -->
-                </select>
-            </div>   
-            <div id="modalCantidad" class="modal-cantidad" style="margin-top: 10px;">
-                <label for="cantidadInput"><strong>Cantidad:</strong></label>
-                <input type="number" id="cantidadInput" class="form-control"
-                       min="1" max="100" step="1" value="1"
-                       style="width: 100px; padding: 5px; margin-top: 5px;">
-            </div>
-            <div id="modalPrecio" class="modal-precio">
-                <h4>Precio: $<span id="precioValue">0.00</span></h4>
-            </div>
-            <!-- Botones para ordenar o cerrar -->
-            <div id="modalButtons" class="modal-buttons">
-                <button class="btn-order" onclick="orderItem()">Ordenar</button>
-                <button class="btn-close" onclick="cerrarModal()">Cerrar</button>
-            </div>
+            <div class="modal-footer">
+                <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+                <a href="factura.html"><button onclick="">Pagar</button></a>
+              </div>
         </div>
     </div>
-</div>
-
-
+    <!-- Carrito Content End -->
 
     <!-- Footer Start -->
     <div class="container-fluid footer py-5">
@@ -253,8 +154,6 @@
     </div>
     <!-- Footer End -->
 
-
-    <!-- Back to Top -->
     <a href="#" class="btn btn-secondary px-2 back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
 
@@ -275,6 +174,16 @@
     <script src="js/main.js"></script>
     <script src="js/galeria.js"></script>
     <script src="js/carrito.js"></script> 
-</body>
 
+    <!-- Justo antes de cerrar el body, añade este script: -->
+<script>
+    // Fuerza la visualización del carrito al cargar la página
+    document.addEventListener('DOMContentLoaded', function() {
+        if (typeof mostrar === 'function') {
+            mostrar();
+        }
+    });
+</script>
+
+</body>
 </html>
