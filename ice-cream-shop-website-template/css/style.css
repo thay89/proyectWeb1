@@ -11309,7 +11309,7 @@ h6,
   }
 }
 
-#videoModal .modal-dialog {
+#videoModal .-dialog {
   position: relative;
   max-width: 800px;
   margin: 60px auto 0 auto;
@@ -11542,3 +11542,4 @@ h6,
     border-right: none !important;
   }
 }
+
