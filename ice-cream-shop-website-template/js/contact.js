@@ -47,7 +47,7 @@ function mostrarErrores() {
 
     campos.forEach(campo => {
         const mensaje = campo.getAttribute('data-validation-required-message');
-        const mensajeElemento = campo.nextElementSibling; // El <p> justo debajo
+        const mensajeElemento = campo.nextElementSibling; 
 
         if (!campo.value.trim()) {
             mensajeElemento.textContent = mensaje;
