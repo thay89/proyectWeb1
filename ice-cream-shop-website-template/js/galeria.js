@@ -80,7 +80,6 @@ function buscarProductos(query) {
         });
     });
     
-    // Mostrar mensaje si no hay resultados
     if (!resultadosEncontrados) {
         mostrarMensajeNoResultados(galeria, query);
     }
@@ -282,12 +281,10 @@ function configurarCantidad() {
     });
 }
 
-// Cerrar modal
-// Reemplaza la función existente con esto:
 function cerrarModal() {
     document.getElementById('customModal').style.display = 'none';
 }
-// Asegura disponibilidad global con ambos nombres
+
 window.cerrarModal = cerrarModal;
 window.closeModal = cerrarModal; // Para compatibilidad con el HTML existente
 
