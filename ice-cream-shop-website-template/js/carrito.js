@@ -161,11 +161,9 @@ function actualizarContadores() {
     });
 }
 
-// Al final del archivo, reemplaza el evento DOMContentLoaded con esto:
 document.addEventListener('DOMContentLoaded', function() {
     cargarCarrito();
     
-    // Verifica si estamos en la página de carrito.html
     if (window.location.pathname.includes('carrito.html')) {
         mostrar(); // Muestra el contenido inmediatamente
     }
